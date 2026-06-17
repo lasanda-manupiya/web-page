@@ -46,5 +46,20 @@ Format: date — change — affected files.
 - **Tested** responsive (mobile→large-desktop), navigation, selectors/pathways, 3D load/modes/selection, reduced motion, forms, keyboard/landmarks, links, metadata, structured data, sitemap/robots, 404, production build (no console errors).
 - **Added** `phase-4/PHASE_4_QA_REPORT.md`.
 
+## 2026-06-17 — Light enterprise redesign + I-Cost Group brand (layout only)
+
+Scope: layout, styling, visual hierarchy only. No content, routes, functionality, selector options, 3D behaviour, model data, SEO metadata or form logic changed.
+
+- **Brand fix:** header/footer now show the **I-Cost Group** logo (`public/brand/icost-group-logo-320.png`, optimised from supplied PNG) and wordmark, replacing the "iCost + SustainZone" lockup. Platform-name references retained in body content.
+- **Light enterprise theme:** new Tailwind tokens (ink #0b1f3a, muted #52637a, line #dce4df, mist #f6f8f7, green #42a653). Repointed `accent` to green; migrated all components/pages from the dark navy theme to light.
+- **Header:** compact white, logo left, nav centre, green CTA right, thin border; existing mobile menu retained.
+- **Hero:** two-column 44/56 (`grid-cols-[44fr_56fr]`); left = eyebrow + H1 + support + selector panel + pathway; right = `HeroModelStage`.
+- **HeroModelStage (new):** the interactive 3D model in a light grey rounded stage, compact mode chips (left), and floating white metric panels using existing demonstration values (Total project cost £143,975, Embodied carbon 39.8 tCO₂e, Information gaps). Light canvas background added to `Canvas3D`.
+- **CapabilityCards (new):** the four platform layers as numbered cards (01–04) with icons + Explore links; 4-col desktop / 2-col tablet / 1-col mobile, equal height, hover lift.
+- **Reveal (new):** subtle GSAP scroll-reveal (reduced-motion aware, visible without JS).
+- **Adapted from reference (honesty):** omitted the reference's named client logos (Turner/ARUP/…) and invented stats ($142.7M ↓3.6%, 82% confidence) — these would fabricate endorsements/results, forbidden by the brief. Used existing labelled demonstration values instead.
+- **Fixed** horizontal overflow at < lg (added `grid-cols-1` base + `min-w-0`). Verified no overflow mobile→large-desktop; QA crawler ALL CHECKS PASSED; no console errors.
+- Full interactive demo (element selection + info panel) remains on `/3d-demo`; home hero keeps interactive modes + selection feedback (one canvas on home).
+
 ## Pending
 - Owner approval of Phase 4 (Approval Gate 4 / release). Pre-launch tooling (Lighthouse/CWV, axe, screen-reader, real-device) and owner inputs (domain D-05, capability matrix D-01, contact D-04, logos D-03) remain before go-live.

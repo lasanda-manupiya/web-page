@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
+import CapabilityCards from '@/components/CapabilityCards';
 import StorySteps from '@/components/StorySteps';
-import StoryExperience from '@/components/StoryExperience';
-import { HowItWorks, PlatformOverview } from '@/components/ContentSections';
+import { HowItWorks } from '@/components/ContentSections';
 import EvidenceLimits from '@/components/EvidenceLimits';
 import Contact from '@/components/Contact';
 import { organisationSchema, websiteSchema, jsonLd } from '@/lib/seo/schema';
@@ -19,10 +19,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <CapabilityCards />
       <HowItWorks />
       <StorySteps />
-      <StoryExperience />
-      <PlatformOverview />
       <EvidenceLimits />
       <Contact />
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organisationSchema())} />

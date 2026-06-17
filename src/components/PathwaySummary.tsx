@@ -10,10 +10,10 @@ export default function PathwaySummary() {
 
   if (!pathway) {
     return (
-      <div className="rounded-panel border border-dashed border-navy-300 bg-navy-50 p-4 text-sm text-navy-700">
+      <div className="rounded-xl border border-dashed border-line bg-mist p-4 text-sm text-muted">
         <p>
           Choose an objective above to see a suggested pathway, or{' '}
-          <Link href="/#platform" className="font-medium text-accent-700 underline">
+          <Link href="/platform" className="font-medium text-accent-700 underline">
             view the complete platform overview
           </Link>
           .
@@ -32,9 +32,9 @@ export default function PathwaySummary() {
           : 'Model intelligence';
 
   return (
-    <div className="rounded-panel border border-navy-200 bg-navy-50 p-4">
+    <div className="rounded-xl border border-line bg-mist p-4">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-700">
+        <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
           Suggested pathway
         </h3>
         <button
@@ -50,8 +50,8 @@ export default function PathwaySummary() {
       </div>
 
       {pathway.objective && (
-        <p className="mt-1 text-sm text-navy-700">
-          For <strong>{pathway.objective.label.toLowerCase()}</strong>
+        <p className="mt-1 text-sm text-muted">
+          For <strong className="text-ink">{pathway.objective.label.toLowerCase()}</strong>
           {pathway.organisation ? <> as a <strong>{pathway.organisation.label.toLowerCase()}</strong></> : null} —{' '}
           {brandLabel}.
         </p>
@@ -60,17 +60,17 @@ export default function PathwaySummary() {
       <ol className="mt-3 flex flex-wrap items-center gap-2 text-sm">
         {pathway.stages.map((stage, i) => (
           <li key={stage} className="flex items-center gap-2">
-            <span className="rounded-panel bg-white px-2 py-1 text-navy-900 ring-1 ring-navy-200">
+            <span className="rounded-md bg-white px-2 py-1 text-ink ring-1 ring-line">
               {stage}
             </span>
-            {i < pathway.stages.length - 1 && <span aria-hidden className="text-navy-400">→</span>}
+            {i < pathway.stages.length - 1 && <span aria-hidden className="text-accent">→</span>}
           </li>
         ))}
       </ol>
 
       <div className="mt-3 text-sm">
-        <p className="font-medium text-navy-900">Relevant outputs</p>
-        <ul className="mt-1 list-inside list-disc text-navy-700">
+        <p className="font-medium text-ink">Relevant outputs</p>
+        <ul className="mt-1 list-inside list-disc text-muted">
           {pathway.outputs.map((o) => (
             <li key={o}>{o}</li>
           ))}
@@ -80,18 +80,18 @@ export default function PathwaySummary() {
       <div className="mt-4 flex flex-wrap gap-3">
         <Link
           href={pathway.page}
-          className="rounded-panel bg-navy px-3 py-2 text-sm font-medium text-white hover:bg-navy-700"
+          className="rounded-md bg-accent px-3 py-2 text-sm font-semibold text-white hover:bg-accent-600"
         >
           See the relevant pages
         </Link>
-        <a
-          href="/#contact"
-          className="rounded-panel border border-navy-300 px-3 py-2 text-sm font-medium text-navy-900 hover:bg-white"
+        <Link
+          href="/contact"
+          className="rounded-md border border-line px-3 py-2 text-sm font-medium text-ink hover:bg-mist"
         >
           Discuss your model
-        </a>
+        </Link>
       </div>
-      <p className="mt-2 text-xs text-neutral-600">
+      <p className="mt-2 text-xs text-muted">
         Your objective and organisation are passed to the enquiry so the discussion starts with
         context.
       </p>

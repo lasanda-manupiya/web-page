@@ -15,8 +15,8 @@ export default function DemoPage() {
     <>
       <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Interactive demo', path: '/3d-demo' }]} />
       <header className="mx-auto max-w-content px-4 pt-4">
-        <h1 className="text-3xl font-bold text-navy-900 md:text-4xl">Interactive BIM intelligence demo</h1>
-        <p className="mt-3 max-w-2xl text-lg text-neutral-700">
+        <h1 className="text-3xl font-bold text-ink md:text-4xl">Interactive BIM intelligence demo</h1>
+        <p className="mt-3 max-w-2xl text-lg text-muted">
           Explore one model through five connected modes. Everything shown is demonstration data on a
           temporary model; the full explanation is available as text on this page.
         </p>

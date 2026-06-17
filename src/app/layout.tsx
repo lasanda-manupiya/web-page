@@ -27,6 +27,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-GB" className={inter.variable}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');" }}
+        />
+      </head>
       <body>
         <a href="#main" className="skip-link">
           Skip to main content

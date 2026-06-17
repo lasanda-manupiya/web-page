@@ -9,11 +9,11 @@ export default function Legend() {
   const def = MODE_BY_ID[mode];
 
   if (mode === 'data') {
-    return <p className="text-xs text-neutral-600">Select an element to view its extracted properties and quantities.</p>;
+    return <p className="text-xs text-muted">Select an element to view its extracted properties and quantities.</p>;
   }
 
   return (
-    <div className="text-xs text-neutral-700">
+    <div className="text-xs text-muted">
       {(mode === 'cost' || mode === 'carbon') && (
         <div>
           <div className="flex items-center gap-2">

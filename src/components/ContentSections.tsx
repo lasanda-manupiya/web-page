@@ -12,16 +12,16 @@ export function HowItWorks({ headingLevel = 'h2' }: { headingLevel?: 'h1' | 'h2'
   const Heading = headingLevel;
   return (
     <section id="how" className="mx-auto max-w-content px-4 py-12" aria-labelledby="how-heading">
-      <Heading id="how-heading" className="text-2xl font-bold text-navy-900 md:text-3xl">How it works</Heading>
-      <p className="mt-2 max-w-2xl text-neutral-700">
+      <Heading id="how-heading" className="text-2xl font-bold text-ink md:text-3xl">How it works</Heading>
+      <p className="mt-2 max-w-2xl text-muted">
         One model, analysed once, then read through the kinds of intelligence your project needs.
       </p>
       <ol className="mt-6 grid gap-4 md:grid-cols-3">
         {steps.map(([title, body], i) => (
-          <li key={title} className="rounded-panel border border-navy-200 bg-white p-4">
+          <li key={title} className="rounded-panel border border-line bg-white p-4">
             <span className="text-sm font-semibold text-accent-700">Step {i + 1}</span>
-            <h3 className="mt-1 font-semibold text-navy-900">{title}</h3>
-            <p className="mt-1 text-sm text-neutral-700">{body}</p>
+            <h3 className="mt-1 font-semibold text-ink">{title}</h3>
+            <p className="mt-1 text-sm text-muted">{body}</p>
           </li>
         ))}
       </ol>
@@ -46,7 +46,7 @@ export function PlatformOverview() {
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {layers.map(([title, body]) => (
-            <div key={title} className="rounded-panel border border-navy-700 bg-navy-800 p-4">
+            <div key={title} className="rounded-panel border border-line bg-navy-800 p-4">
               <h3 className="font-semibold">{title}</h3>
               <p className="mt-1 text-sm text-neutral-200">{body}</p>
             </div>

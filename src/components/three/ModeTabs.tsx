@@ -41,8 +41,8 @@ export default function ModeTabs() {
               className={
                 'rounded-panel px-3 py-2 text-sm font-medium ' +
                 (active
-                  ? 'bg-navy text-white'
-                  : 'bg-navy-50 text-navy-800 hover:bg-navy-100')
+                  ? 'bg-accent text-white'
+                  : 'bg-mist text-ink hover:bg-soft')
               }
             >
               {m.label}
@@ -50,7 +50,7 @@ export default function ModeTabs() {
           );
         })}
       </div>
-      <p id="mode-panel" role="tabpanel" aria-labelledby={`tab-${mode}`} className="mt-2 text-sm text-neutral-700">
+      <p id="mode-panel" role="tabpanel" aria-labelledby={`tab-${mode}`} className="mt-2 text-sm text-muted">
         {MODES.find((m) => m.id === mode)!.description}
       </p>
     </div>

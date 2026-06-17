@@ -9,17 +9,17 @@ export default function CustomerSelector() {
 
   return (
     <form
-      className="grid gap-4 rounded-panel border border-navy-200 bg-white p-4 shadow-sm md:grid-cols-2"
+      className="grid gap-4 rounded-xl border border-line bg-white p-5 shadow-sm md:grid-cols-2"
       aria-label="Tell us your objective and organisation"
       onSubmit={(e) => e.preventDefault()}
     >
       <div>
-        <label htmlFor="objective" className="block text-sm font-medium text-navy-900">
+        <label htmlFor="objective" className="block text-sm font-medium text-ink">
           What are you looking to achieve?
         </label>
         <select
           id="objective"
-          className="mt-1 w-full rounded-panel border border-navy-300 bg-white px-3 py-2 text-navy-900"
+          className="mt-1.5 w-full rounded-lg border border-line bg-white px-3 py-2 text-ink focus:border-accent"
           value={objectiveId ?? ''}
           onChange={(e) => {
             const id = e.target.value || undefined;
@@ -38,12 +38,12 @@ export default function CustomerSelector() {
       </div>
 
       <div>
-        <label htmlFor="organisation" className="block text-sm font-medium text-navy-900">
+        <label htmlFor="organisation" className="block text-sm font-medium text-ink">
           What best describes your organisation?
         </label>
         <select
           id="organisation"
-          className="mt-1 w-full rounded-panel border border-navy-300 bg-white px-3 py-2 text-navy-900"
+          className="mt-1.5 w-full rounded-lg border border-line bg-white px-3 py-2 text-ink focus:border-accent"
           value={organisationId ?? ''}
           onChange={(e) => setOrganisation(e.target.value || undefined)}
         >
@@ -56,14 +56,17 @@ export default function CustomerSelector() {
         </select>
       </div>
 
-      <p className="text-xs text-neutral-600 md:col-span-2">
-        Based on what you tell us, we suggest a relevant pathway. We do not collect or verify any
-        information about you from this selection.
-        {objectiveId && (
-          <span className="ml-1">
-            Active model view: <strong>{MODE_BY_ID[objectives.find((o) => o.id === objectiveId)!.mode].label}</strong>.
-          </span>
-        )}
+      <p className="flex items-start gap-1.5 text-xs text-muted md:col-span-2">
+        <span aria-hidden className="mt-0.5 text-muted">🔒</span>
+        <span>
+          Based on what you tell us, we suggest a relevant pathway. We do not collect or verify any
+          information about you from this selection.
+          {objectiveId && (
+            <span className="ml-1">
+              Active model view: <strong className="text-ink">{MODE_BY_ID[objectives.find((o) => o.id === objectiveId)!.mode].label}</strong>.
+            </span>
+          )}
+        </span>
       </p>
     </form>
   );

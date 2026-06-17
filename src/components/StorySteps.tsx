@@ -30,25 +30,26 @@ export default function StorySteps() {
 
   function goToDemo(mode?: ModeId) {
     if (mode) setMode(mode);
-    document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const target = document.getElementById('model-stage') || document.getElementById('demo');
+    target?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
   return (
     <section className="mx-auto max-w-content px-4 py-12" aria-labelledby="story-h">
-      <h2 id="story-h" className="text-2xl font-bold text-navy-900">The journey, step by step</h2>
-      <p className="mt-2 max-w-2xl text-neutral-700">
+      <h2 id="story-h" className="text-2xl font-bold text-ink">The journey, step by step</h2>
+      <p className="mt-2 max-w-2xl text-muted">
         The same model runs through eight steps. The full story is written here; the interactive model
         below brings it to life. Motion is optional — every step is readable without it.
       </p>
       <ol className="mt-6 grid gap-4 md:grid-cols-2">
         {SCENES.map((s) => (
-          <li key={s.n} className="rounded-panel border border-navy-200 bg-white p-4">
+          <li key={s.n} className="rounded-panel border border-line bg-white p-4">
             <div className="flex items-baseline gap-2">
               <span className="text-sm font-semibold text-accent-700">Scene {s.n}</span>
-              <span className="text-sm text-neutral-500">· {s.step}</span>
+              <span className="text-sm text-muted">· {s.step}</span>
             </div>
-            <h3 className="mt-1 font-semibold text-navy-900">{s.message}</h3>
-            <p className="mt-1 text-sm text-neutral-700">{s.body}</p>
+            <h3 className="mt-1 font-semibold text-ink">{s.message}</h3>
+            <p className="mt-1 text-sm text-muted">{s.body}</p>
             {s.mode && (
               <button
                 type="button"

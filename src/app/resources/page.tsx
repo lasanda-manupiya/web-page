@@ -38,8 +38,8 @@ export default function ResourcesPage() {
     <>
       <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Resources', path: '/resources' }]} />
       <header className="mx-auto max-w-content px-4 pt-4">
-        <h1 className="text-3xl font-bold text-navy-900 md:text-4xl">Resources and guides</h1>
-        <p className="mt-3 max-w-2xl text-lg text-neutral-700">
+        <h1 className="text-3xl font-bold text-ink md:text-4xl">Resources and guides</h1>
+        <p className="mt-3 max-w-2xl text-lg text-muted">
           Short, practical explanations of the distinctions that matter when turning a model into
           cost, carbon and risk intelligence.
         </p>
@@ -47,9 +47,9 @@ export default function ResourcesPage() {
       <div className="mx-auto max-w-content px-4 py-8">
         <ul className="grid gap-4 md:grid-cols-2">
           {GUIDES.map((g) => (
-            <li key={g.h} className="rounded-panel border border-navy-200 p-4">
-              <h2 className="font-semibold text-navy-900">{g.h}</h2>
-              <p className="mt-2 text-sm text-neutral-700">{g.p}</p>
+            <li key={g.h} className="rounded-panel border border-line p-4">
+              <h2 className="font-semibold text-ink">{g.h}</h2>
+              <p className="mt-2 text-sm text-muted">{g.p}</p>
               <Link href={g.link.href} className="mt-3 inline-block text-sm font-medium text-accent-700 underline">
                 {g.link.label} →
               </Link>

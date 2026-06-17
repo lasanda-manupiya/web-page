@@ -23,19 +23,25 @@ const config: Config = {
           900: '#061c2e',
           950: '#03101b',
         },
-        // Restrained green accent
+        // Primary green accent (reference light enterprise theme)
         accent: {
-          DEFAULT: '#2f9e6f',
-          50: '#eafaf2',
-          100: '#cdf0de',
-          300: '#7fd3aa',
-          500: '#2f9e6f',
-          600: '#23805a',
-          700: '#1c6747',
+          DEFAULT: '#42a653',
+          50: '#edf7ed',
+          100: '#d7eed9',
+          300: '#74bf67',
+          500: '#42a653',
+          600: '#369247',
+          700: '#2c7a3b',
         },
+        // Light enterprise theme tokens (per reference)
+        ink: '#0b1f3a', // primary text
+        muted: '#52637a', // secondary text
+        line: '#dce4df', // borders
+        mist: '#f6f8f7', // secondary section background
+        soft: '#edf7ed', // soft green
         // iCost / SustainZone brand cues (provisional until DEP-06 vector logos confirmed)
         icost: '#c79a3a', // gold cue from supplied logo
-        sustain: '#2f9e6f',
+        sustain: '#42a653',
         neutral: {
           50: '#f7f8fa',
           100: '#eef0f3',

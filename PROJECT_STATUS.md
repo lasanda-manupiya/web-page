@@ -20,6 +20,9 @@
 ## Phase 4 QA
 Crawler "ALL CHECKS PASSED"; responsive mobile→large-desktop; mobile menu added; canonical + H1 defects fixed. See `phase-4/PHASE_4_QA_REPORT.md`. Pre-launch tooling (Lighthouse/CWV, axe, screen-reader, real-device) and owner inputs (domain, capability matrix, contact, logos) remain.
 
+## Visual redesign (2026-06-17, owner-requested)
+Light enterprise theme matching the supplied reference; brand corrected to **I-Cost Group** (logo added). Two-column hero with dominant model stage + floating metric panels; four numbered capability cards. Layout/styling only — no content/route/functionality/SEO/3D/data changes. Overflow fixed; QA crawler green; no console errors. See CHANGELOG 2026-06-17 redesign entry.
+
 ## Phase 2 prototype
 One responsive page on `localhost:3000`. See `phase-2/PHASE_2_PROTOTYPE_REPORT.md`. Run: `npm run build && npm start` (or `npm run dev`) in `D:\gitprojects\website for i cost group`.
 

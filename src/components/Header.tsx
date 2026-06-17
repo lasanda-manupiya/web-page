@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const NAV = [
   { href: '/platform', label: 'Platform' },
   { href: '/how-it-works', label: 'How it works' },
-  { href: '/3d-demo', label: 'Demo' },
+  { href: '/solutions/contractors', label: 'Solutions' },
   { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'About' },
 ];
@@ -14,7 +15,6 @@ const NAV = [
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  // Close on Escape
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
@@ -23,18 +23,23 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-navy-800 bg-navy text-white">
-      <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight" onClick={() => setOpen(false)}>
-          <span className="inline-block h-6 w-6 rounded-sm bg-gradient-to-br from-icost to-accent" aria-hidden />
-          <span>
-            iCost <span className="text-neutral-300">+</span> SustainZone
-          </span>
+    <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-content items-center justify-between gap-4 px-4">
+        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)} aria-label="I-Cost Group home">
+          <Image
+            src="/brand/icost-group-logo-320.png"
+            alt="I-Cost Group"
+            width={140}
+            height={83}
+            priority
+            className="h-9 w-auto"
+          />
+          <span className="text-lg font-semibold tracking-tight text-ink">I-Cost Group</span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden gap-6 text-sm md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-7 text-sm font-medium text-muted md:flex">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="text-neutral-100 hover:text-white">
+            <Link key={n.href} href={n.href} className="transition-colors hover:text-ink">
               {n.label}
             </Link>
           ))}
@@ -43,15 +48,15 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
-            className="hidden rounded-panel bg-accent px-3 py-2 text-sm font-medium text-white hover:bg-accent-600 sm:inline-block"
+            className="group hidden items-center gap-1.5 rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-accent-600 sm:inline-flex"
           >
             Request a demonstration
+            <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
           </Link>
 
-          {/* Mobile menu toggle */}
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-panel border border-navy-700 p-2 md:hidden"
+            className="inline-flex items-center justify-center rounded-md border border-line p-2 text-ink md:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? 'Close menu' : 'Open menu'}
@@ -68,19 +73,14 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile nav panel */}
       {open && (
-        <nav
-          id="mobile-nav"
-          aria-label="Primary (mobile)"
-          className="border-t border-navy-700 bg-navy md:hidden"
-        >
+        <nav id="mobile-nav" aria-label="Primary (mobile)" className="border-t border-line bg-white md:hidden">
           <ul className="mx-auto flex max-w-content flex-col px-4 py-2">
             {NAV.map((n) => (
               <li key={n.href}>
                 <Link
                   href={n.href}
-                  className="block rounded-panel px-2 py-3 text-neutral-100 hover:bg-navy-800 hover:text-white"
+                  className="block rounded-md px-2 py-3 text-ink hover:bg-mist"
                   onClick={() => setOpen(false)}
                 >
                   {n.label}
@@ -90,7 +90,7 @@ export default function Header() {
             <li>
               <Link
                 href="/contact"
-                className="mt-1 block rounded-panel bg-accent px-2 py-3 font-medium text-white"
+                className="mt-1 block rounded-md bg-accent px-2 py-3 font-semibold text-white"
                 onClick={() => setOpen(false)}
               >
                 Request a demonstration

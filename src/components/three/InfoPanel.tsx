@@ -18,8 +18,8 @@ import DemoBadge from '@/components/DemoBadge';
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flex justify-between gap-4 border-b border-neutral-100 py-1 text-sm last:border-0">
-      <dt className="text-neutral-600">{label}</dt>
-      <dd className="text-right font-medium text-navy-900">{value}</dd>
+      <dt className="text-muted">{label}</dt>
+      <dd className="text-right font-medium text-ink">{value}</dd>
     </div>
   );
 }
@@ -31,10 +31,10 @@ export default function InfoPanel() {
   return (
     <aside
       aria-label="Element information"
-      className="rounded-panel border border-navy-200 bg-white p-4"
+      className="rounded-panel border border-line bg-white p-4"
     >
       <div className="mb-2 flex items-center justify-between">
-        <h3 className="text-sm font-semibold uppercase tracking-wide text-navy-700">
+        <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
           Information panel
         </h3>
         <DemoBadge />
@@ -42,7 +42,7 @@ export default function InfoPanel() {
 
       <div aria-live="polite">
         {!el && (
-          <div className="text-sm text-neutral-700">
+          <div className="text-sm text-muted">
             <p>No element selected. Choose an element in the model, or from the list below it.</p>
             <dl className="mt-3">
               <Row label="Demo project cost" value={`£${costSummary.projectTotal.toLocaleString('en-GB')}`} />
@@ -53,11 +53,11 @@ export default function InfoPanel() {
 
         {el && (
           <div>
-            <p className="text-base font-semibold text-navy-900">{el.elementName}</p>
-            <p className="text-xs text-neutral-600">
+            <p className="text-base font-semibold text-ink">{el.elementName}</p>
+            <p className="text-xs text-muted">
               {el.ifcClass} · {el.storey} · {el.space}
             </p>
-            <p className="mt-1 text-[11px] text-neutral-500">IFC GlobalId: {el.ifcGlobalId} (placeholder)</p>
+            <p className="mt-1 text-[11px] text-muted">IFC GlobalId: {el.ifcGlobalId} (placeholder)</p>
 
             <dl className="mt-3">
               {mode === 'data' && <DataView guid={el.ifcGlobalId} />}
@@ -91,7 +91,7 @@ function DataView({ guid }: { guid: string }) {
 
 function CostView({ guid }: { guid: string }) {
   const c = getCost(guid);
-  if (!c) return <p className="text-sm text-neutral-600">No cost data.</p>;
+  if (!c) return <p className="text-sm text-muted">No cost data.</p>;
   return (
     <>
       <Row label="Element total" value={c.elementTotal != null ? `£${c.elementTotal.toLocaleString('en-GB')}` : <Missing />} />
@@ -106,7 +106,7 @@ function CostView({ guid }: { guid: string }) {
 
 function CarbonView({ guid }: { guid: string }) {
   const c = getCarbon(guid);
-  if (!c) return <p className="text-sm text-neutral-600">No carbon data.</p>;
+  if (!c) return <p className="text-sm text-muted">No carbon data.</p>;
   return (
     <>
       <Row label="Embodied carbon" value={c.elementCarbon != null ? `${c.elementCarbon} tCO₂e` : <Missing />} />
@@ -126,7 +126,7 @@ function GapView({ guid }: { guid: string }) {
       <Row label="Missing field" value={<span className="text-amber-800">{g.missingField}</span>} />
       <Row label="Severity" value={<SeverityTag sev={g.severity} />} />
       <Row label="Affects" value={g.affectedAnalysis.join(', ')} />
-      <p className="mt-2 text-sm text-neutral-700">{g.recommendation}</p>
+      <p className="mt-2 text-sm text-muted">{g.recommendation}</p>
     </>
   );
 }
@@ -141,7 +141,7 @@ function RiskView({ guid }: { guid: string }) {
           <Row label="Reason" value={r.reason} />
         </>
       ) : (
-        <p className="text-sm text-neutral-600">No specific risk recorded for this element.</p>
+        <p className="text-sm text-muted">No specific risk recorded for this element.</p>
       )}
       <div className="mt-3 rounded border border-amber-300 bg-amber-50 p-2 text-xs text-amber-900">
         <p className="font-medium">Scenario: {fireScenario.scenarioId}</p>
@@ -159,7 +159,7 @@ function SeverityTag({ sev }: { sev: 'high' | 'medium' | 'low' }) {
   const map = {
     high: 'border-red-300 bg-red-50 text-red-800',
     medium: 'border-amber-300 bg-amber-50 text-amber-800',
-    low: 'border-neutral-300 bg-neutral-50 text-neutral-700',
+    low: 'border-neutral-300 bg-neutral-50 text-muted',
   };
   return <span className={`rounded border px-1.5 py-0.5 text-xs ${map[sev]}`}>{sev}</span>;
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const PLATFORM_LINKS = [
   { href: '/bim-ifc-model-analysis', label: 'BIM & IFC model analysis' },
@@ -18,42 +19,45 @@ const SOLUTION_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-neutral-200 bg-navy-950 text-neutral-100">
-      <div className="mx-auto grid max-w-content gap-8 px-4 py-10 md:grid-cols-4">
+    <footer className="mt-20 border-t border-line bg-mist text-muted">
+      <div className="mx-auto grid max-w-content gap-8 px-4 py-12 md:grid-cols-4">
         <div>
-          <p className="font-semibold">iCost + SustainZone</p>
-          <p className="mt-2 max-w-sm text-sm text-neutral-300">
+          <div className="flex items-center gap-2">
+            <Image src="/brand/icost-group-logo-320.png" alt="I-Cost Group" width={120} height={71} className="h-8 w-auto" />
+            <span className="text-base font-semibold text-ink">I-Cost Group</span>
+          </div>
+          <p className="mt-3 max-w-sm text-sm text-muted">
             Integrated BIM Cost, Carbon and Risk Intelligence Platform. One model becomes connected
             cost, carbon, asset, information-gap and risk intelligence.
           </p>
         </div>
         <nav className="text-sm" aria-label="Platform">
-          <p className="font-medium text-white">Platform</p>
-          <ul className="mt-2 space-y-1">
+          <p className="font-semibold text-ink">Platform</p>
+          <ul className="mt-3 space-y-2">
             {PLATFORM_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-neutral-300 hover:text-white hover:underline">{l.label}</Link>
+                <Link href={l.href} className="text-muted hover:text-ink hover:underline">{l.label}</Link>
               </li>
             ))}
           </ul>
         </nav>
         <nav className="text-sm" aria-label="Solutions">
-          <p className="font-medium text-white">Solutions</p>
-          <ul className="mt-2 space-y-1">
+          <p className="font-semibold text-ink">Solutions</p>
+          <ul className="mt-3 space-y-2">
             {SOLUTION_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-neutral-300 hover:text-white hover:underline">{l.label}</Link>
+                <Link href={l.href} className="text-muted hover:text-ink hover:underline">{l.label}</Link>
               </li>
             ))}
-            <li><Link href="/platform" className="text-neutral-300 hover:text-white hover:underline">All capabilities →</Link></li>
+            <li><Link href="/platform" className="text-accent-700 hover:underline">All capabilities →</Link></li>
           </ul>
         </nav>
-        <div className="text-sm text-neutral-300">
-          <p className="font-medium text-white">Status</p>
-          <p className="mt-2">
+        <div className="text-sm text-muted">
+          <p className="font-semibold text-ink">Status</p>
+          <p className="mt-3">
             Prototype build. Contact, legal and registration details to be confirmed (placeholder).
           </p>
-          <p className="mt-4 text-xs text-neutral-400">© 2026 iCost + SustainZone. Placeholder details.</p>
+          <p className="mt-4 text-xs text-muted">© 2026 I-Cost Group. Placeholder details.</p>
         </div>
       </div>
     </footer>
