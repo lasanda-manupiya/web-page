@@ -56,6 +56,16 @@ Status values: draft | provisional | awaiting approval | approved | superseded.
 | App | src/app/{layout,page,not-found}.tsx, globals.css | provisional |
 | Public assets | public/models/office-{desktop,mobile}.glb, public/draco/*, public/posters/hero-poster.svg | provisional |
 
+## Phase 3 full website (`src/`, `phase-3/`)
+
+| Area | Files | Status |
+|------|-------|--------|
+| Report | phase-3/PHASE_3_REPORT.md | awaiting approval |
+| SEO | src/lib/seo/{site,metadata,schema}.ts; src/app/{sitemap,robots}.ts | provisional |
+| Content | src/content/pages.ts (14 pages) | provisional |
+| Components | src/components/{Breadcrumbs,ContentPage,StorySteps}.tsx; updated Header/Footer | provisional |
+| Routes | src/app/{[slug],solutions/[slug],platform,how-it-works,3d-demo,resources,about,contact}/page.tsx; updated page.tsx | provisional |
+
 ## Supplied source assets
 
 | File | Location | Purpose | Status |

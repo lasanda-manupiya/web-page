@@ -25,5 +25,16 @@ Format: date — change — affected files.
 - **Validated** in-browser: production build green, model loads (Draco), mode recolouring + selection confirmed, no console errors. Tuned camera framing; removed double-fetch preload.
 - **Added** `phase-2/PHASE_2_PROTOTYPE_REPORT.md`.
 
+## 2026-06-17 — Gate 2 approved; Phase 3 full website built
+
+- **Approved** Gate 2 ("proceed").
+- **Added** SEO infrastructure: `lib/seo/{site,metadata,schema}.ts`; `app/sitemap.ts`; `app/robots.ts` (staging Disallow until `SITE.indexable` flipped at launch).
+- **Added** content registry `src/content/pages.ts` (8 capabilities + 6 solutions, UK-English, distinct search intent, problem/input/analysis/output/limitations/related/CTA).
+- **Added** reusable `ContentPage`, `Breadcrumbs` (+ BreadcrumbList schema), `StorySteps` (8-scene storyline, verbatim PDF §6/§8 messages).
+- **Built** all 26 routes: home (now with storyline + Organisation/WebSite schema), `/platform` hub, dynamic `/[slug]` capabilities + `/solutions/[slug]`, `/how-it-works`, `/3d-demo`, `/resources`, `/about`, `/contact`, custom 404.
+- **Updated** Header + Footer to real internal links across platform & solutions.
+- **Verified** production build green (26/26 prerendered), unique titles/H1s server-rendered, robots/sitemap correct, no console errors.
+- **Added** `phase-3/PHASE_3_REPORT.md`.
+
 ## Pending
-- Owner approval of Phase 2 (Approval Gate 2) before Phase 3 full website build begins.
+- Owner approval of Phase 3 (Approval Gate 3) before Phase 4 QA & release work begins.

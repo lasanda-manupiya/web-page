@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
 const NAV = [
-  { href: '/#platform', label: 'Platform' },
-  { href: '/#how', label: 'How it works' },
-  { href: '/#demo', label: 'Demo' },
-  { href: '/#evidence', label: 'Evidence' },
+  { href: '/platform', label: 'Platform' },
+  { href: '/how-it-works', label: 'How it works' },
+  { href: '/3d-demo', label: 'Demo' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/about', label: 'About' },
 ];
 
 export default function Header() {
@@ -19,17 +20,17 @@ export default function Header() {
         </Link>
         <nav aria-label="Primary" className="hidden gap-6 text-sm md:flex">
           {NAV.map((n) => (
-            <a key={n.href} href={n.href} className="text-neutral-100 hover:text-white">
+            <Link key={n.href} href={n.href} className="text-neutral-100 hover:text-white">
               {n.label}
-            </a>
+            </Link>
           ))}
         </nav>
-        <a
-          href="/#contact"
+        <Link
+          href="/contact"
           className="rounded-panel bg-accent px-3 py-2 text-sm font-medium text-white hover:bg-accent-600"
         >
           Request a demonstration
-        </a>
+        </Link>
       </div>
     </header>
   );

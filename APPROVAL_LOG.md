@@ -16,13 +16,17 @@ Record of approvals at each gate. No entry = not yet approved.
 - **Presented:** 2026-06-17
 - **Built:** One responsive page; hero + 9×9 selectors + pathway engine; optimised placeholder GLB (36 MB → 0.32/0.21 MB) with Draco+WebP; loading/progress/error/poster states; element selection (pointer + keyboard); consistent info panel; 5 modes (Data/Cost/Carbon/Gaps/Risk); one GSAP scroll camera transition; reduced-motion / WebGL-unavailable / mobile fallbacks; demonstration-data labelling. Production build green; validated in-browser with no console errors.
 - **Report:** `phase-2/PHASE_2_PROTOTYPE_REPORT.md`
-- **Decision:** _pending_
+- **Decision:** APPROVED — "proceed" 2026-06-17.
 
 ## Approval Gate 3 — Full website structure, content, design, functionality
-- **Status:** Not reached
+- **Status:** Awaiting owner approval
+- **Presented:** 2026-06-17
+- **Built:** 26 routes (home with 8-scene storyline + interactive demo; platform hub; 8 capability + 6 solution pages; how-it-works, 3d-demo, resources, about, contact; 404; sitemap.xml; robots.txt). Per-page unique metadata + canonical + OG; single H1; breadcrumbs; Organisation/WebSite/BreadcrumbList schema; internal links; UK-English honest copy; demonstration labelling. Production build green; no console errors.
+- **Report:** `phase-3/PHASE_3_REPORT.md`
+- **Decision:** _pending_
 
 ## Approval Gate 4 — QA, production build, release readiness
-- **Status:** Not reached
+- **Status:** Not reached (blocked by Gate 3)
 
 ---
 *An approval here is recorded with date, approver and any conditions. Approved deliverables are then versioned (e.g. `_v02_approved`) and previous versions preserved.*

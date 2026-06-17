@@ -2,8 +2,8 @@
 
 **Project:** iCost + SustainZone — Integrated BIM Cost, Carbon and Risk Intelligence Platform website
 **Governing document:** `iCost_SustainZone_3D_Website_Project_Guide.pdf` (v1.0, June 2026) — **located, opened and fully read** via text extraction (all 12 pages / 20 sections).
-**Current phase:** Phase 2 — Technical Prototype (built; awaiting Gate 2)
-**Current approval gate:** Approval Gate 2 (awaiting written owner approval). Gate 1 = APPROVED 2026-06-17.
+**Current phase:** Phase 3 — Full Website Implementation (built; awaiting Gate 3)
+**Current approval gate:** Approval Gate 3 (awaiting written owner approval). Gates 1 & 2 = APPROVED 2026-06-17.
 **Last updated:** 2026-06-17
 
 ---
@@ -13,8 +13,8 @@
 | Phase | Description | Status |
 |-------|-------------|--------|
 | Phase 1 | Review, discovery, strategy, architecture, plan | **APPROVED (Gate 1, 2026-06-17)** |
-| Phase 2 | Technical prototype | **Built; production build green; awaiting Gate 2** |
-| Phase 3 | Full website implementation | Not started (blocked by Gate 2) |
+| Phase 2 | Technical prototype | **APPROVED (Gate 2, 2026-06-17)** |
+| Phase 3 | Full website implementation | **Built; 26 routes; production build green; awaiting Gate 3** |
 | Phase 4 | Quality assurance & release readiness | Not started (blocked by Gate 3) |
 
 ## Phase 2 prototype
