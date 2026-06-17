@@ -3,7 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import NavDropdown from './NavDropdown';
+import { CAPABILITIES, SOLUTIONS } from '@/content/pages';
 
+const PLATFORM_ITEMS = CAPABILITIES.map((c) => ({ href: c.url, label: c.navLabel }));
+const SOLUTION_ITEMS = SOLUTIONS.map((s) => ({ href: s.url, label: s.navLabel }));
+
+// Flat links used in the mobile menu.
 const NAV = [
   { href: '/platform', label: 'Platform' },
   { href: '/how-it-works', label: 'How it works' },
@@ -38,11 +44,11 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-7 text-sm font-medium text-muted md:flex">
-          {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="transition-colors hover:text-ink">
-              {n.label}
-            </Link>
-          ))}
+          <NavDropdown label="Platform" overviewHref="/platform" items={PLATFORM_ITEMS} />
+          <Link href="/how-it-works" className="transition-colors hover:text-ink">How it works</Link>
+          <NavDropdown label="Solutions" overviewHref="/platform" items={SOLUTION_ITEMS} />
+          <Link href="/resources" className="transition-colors hover:text-ink">Resources</Link>
+          <Link href="/about" className="transition-colors hover:text-ink">About</Link>
         </nav>
 
         <div className="flex items-center gap-2">

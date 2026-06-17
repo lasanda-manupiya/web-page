@@ -51,10 +51,11 @@ interface Props {
   freeLook: boolean;
   reducedMotion: boolean;
   light?: boolean;
+  autoRotate?: boolean;
   className?: string;
 }
 
-export default function Canvas3D({ url, progressRef, freeLook, reducedMotion, light = false, className }: Props) {
+export default function Canvas3D({ url, progressRef, freeLook, reducedMotion, light = false, autoRotate = false, className }: Props) {
   const bg = light ? '#eef2f0' : '#061c2e';
   return (
     <div
@@ -77,6 +78,7 @@ export default function Canvas3D({ url, progressRef, freeLook, reducedMotion, li
               progressRef={progressRef}
               freeLook={freeLook}
               reducedMotion={reducedMotion}
+              autoRotate={autoRotate}
             />
           </Suspense>
         </Canvas>

@@ -25,7 +25,10 @@ interface Props {
   progressRef: React.MutableRefObject<number>;
   freeLook: boolean;
   reducedMotion: boolean;
+  autoRotate?: boolean;
 }
+
+const AUTO_ROTATE_SPEED = 0.12; // rad/s — slow, controlled (≈ one turn per ~52s)
 
 interface Tracked {
   mesh: THREE.Mesh;
@@ -33,7 +36,7 @@ interface Tracked {
   material: THREE.MeshStandardMaterial;
 }
 
-export default function ModelViewer({ url, progressRef, freeLook, reducedMotion }: Props) {
+export default function ModelViewer({ url, progressRef, freeLook, reducedMotion, autoRotate = false }: Props) {
   const { scene } = useGLTF(url, DRACO_PATH);
   const { camera } = useThree();
   const root = useMemo(() => scene.clone(true), [scene]);
@@ -41,6 +44,7 @@ export default function ModelViewer({ url, progressRef, freeLook, reducedMotion 
   const center = useRef(new THREE.Vector3());
   const size = useRef(4);
   const controlsRef = useRef<any>(null);
+  const autoAngle = useRef(0);
 
   const { mode, selectedGuid, selectElement } = usePlatformStore();
 
@@ -139,10 +143,10 @@ export default function ModelViewer({ url, progressRef, freeLook, reducedMotion 
     }
   }, [mode, selectedGuid]);
 
-  function framing(p: number) {
+  function framing(p: number, azimuthOffset = 0) {
     const c = center.current;
     const r = THREE.MathUtils.lerp(1.7, 1.25, p) * size.current; // distance as multiple of model size
-    const theta = THREE.MathUtils.lerp(0.9, 0.6, p); // azimuth
+    const theta = THREE.MathUtils.lerp(0.9, 0.6, p) + azimuthOffset; // azimuth (+ slow auto-rotation)
     const phi = THREE.MathUtils.lerp(1.15, 1.0, p); // polar (closer to horizontal = less top-down)
     const pos = new THREE.Vector3(
       c.x + r * Math.sin(phi) * Math.cos(theta),
@@ -163,10 +167,12 @@ export default function ModelViewer({ url, progressRef, freeLook, reducedMotion 
       controlsRef.current?.update?.();
       return;
     }
-    if (reducedMotion) return; // static framing already set
-    // ease camera toward the scroll-driven framing
+    if (reducedMotion) return; // static framing — no motion under reduced-motion preference
+    // gentle continuous turntable rotation
+    if (autoRotate) autoAngle.current += delta * AUTO_ROTATE_SPEED;
+    // ease camera toward the (optionally scroll-driven, optionally auto-rotating) framing
     const p = THREE.MathUtils.clamp(progressRef.current, 0, 1);
-    const { pos, look } = framing(p);
+    const { pos, look } = framing(p, autoRotate ? autoAngle.current : 0);
     camera.position.lerp(pos, 1 - Math.pow(0.001, delta));
     camera.lookAt(look);
   });

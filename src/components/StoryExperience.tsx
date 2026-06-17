@@ -111,6 +111,7 @@ export default function StoryExperience() {
               freeLook={freeLook}
               reducedMotion={reduced}
               light
+              autoRotate
             />
           )}
           <div className="mt-2 flex items-center justify-between">

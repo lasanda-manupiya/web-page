@@ -61,5 +61,13 @@ Scope: layout, styling, visual hierarchy only. No content, routes, functionality
 - **Fixed** horizontal overflow at < lg (added `grid-cols-1` base + `min-w-0`). Verified no overflow mobile→large-desktop; QA crawler ALL CHECKS PASSED; no console errors.
 - Full interactive demo (element selection + info panel) remains on `/3d-demo`; home hero keeps interactive modes + selection feedback (one canvas on home).
 
+## 2026-06-17 — Model auto-rotation, animated dropdowns, repo + deploy docs
+
+- **3D model auto-rotation:** gentle continuous turntable (`AUTO_ROTATE_SPEED` 0.12 rad/s, ~52s/turn) in `ModelViewer`, wired via `autoRotate` through `Canvas3D` to the hero stage and demo. Pauses on free-look and respects `prefers-reduced-motion`.
+- **Custom animated dropdowns:** new accessible `ui/Select` (WAI-ARIA listbox: keyboard, aria-activedescendant, outside-click, animated open, rotating caret, selected check) replaces the two native selects in `CustomerSelector` — same options + onChange logic. New `NavDropdown` adds animated Platform/Solutions menus to the header. Added `dropdown-in` keyframe (reduced-motion aware).
+- **README.md** with Hestia/Node deploy steps and env vars (`NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_INDEXABLE`).
+- Removed unused 1.6 MB logo original (header/footer use the 24 KB optimised version).
+- Verified: build green; custom select selection → mode/pathway correct; nav dropdowns open with links; no console errors.
+
 ## Pending
 - Owner approval of Phase 4 (Approval Gate 4 / release). Pre-launch tooling (Lighthouse/CWV, axe, screen-reader, real-device) and owner inputs (domain D-05, capability matrix D-01, contact D-04, logos D-03) remain before go-live.

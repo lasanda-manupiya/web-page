@@ -156,6 +156,7 @@ export default function HeroModelStage() {
             freeLook={false}
             reducedMotion={reduced}
             light
+            autoRotate
             className="h-full w-full"
           />
         )}
