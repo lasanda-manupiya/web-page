@@ -23,6 +23,9 @@ Crawler "ALL CHECKS PASSED"; responsive mobile→large-desktop; mobile menu adde
 ## Visual redesign (2026-06-17, owner-requested)
 Light enterprise theme matching the supplied reference; brand corrected to **I-Cost Group** (logo added). Two-column hero with dominant model stage + floating metric panels; four numbered capability cards. Layout/styling only — no content/route/functionality/SEO/3D/data changes. Overflow fixed; QA crawler green; no console errors. See CHANGELOG 2026-06-17 redesign entry.
 
+## Enhancements + repository (2026-06-17)
+Added gentle 3D model auto-rotation (reduced-motion aware), accessible animated custom dropdowns (`ui/Select`) + animated header Platform/Solutions menus. Added `README.md` with Hestia/Node deploy instructions. **Pushed to GitHub:** https://github.com/lasanda-manupiya/web-page (branch `main`). `node_modules`/`.next`/source GLB excluded; all runtime assets committed.
+
 ## Phase 2 prototype
 One responsive page on `localhost:3000`. See `phase-2/PHASE_2_PROTOTYPE_REPORT.md`. Run: `npm run build && npm start` (or `npm run dev`) in `D:\gitprojects\website for i cost group`.
 
