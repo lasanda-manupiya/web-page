@@ -1,0 +1,23 @@
+filename,file_type,location,purpose,status,suitability,technical_quality,dependencies,required_action,approval_status
+iCost_SustainZone_3D_Website_Project_Guide.pdf,PDF,C:\Users\lasan\Downloads\,Governing project brief / source of truth,Available,Suitable,Good (text extractable; 12 pages),None,Use as governing brief,Approved as brief
+office_building.glb,GLB (glTF 2.0),project root,Temporary public marketing 3D model,Available but unverified,Partial - generic office not IFC terminal,"131 nodes,57 meshes,14 mat,3 tex,~643k tris,37.9MB",Needs optimisation + element map,Optimise (Draco/meshopt+KTX2); treat as temporary,Needs confirmation
+I-COST GROUP logo (raster),PNG (in chat),supplied in conversation,Brand reference / temporary logo,Available but unverified,Usable temporarily,Raster only; no vector,Needs vector source,Request SVG/high-res; use as placeholder,Needs confirmation
+Master IFC4 model,IFC,not supplied,Semantic source of truth,Missing,Required,N/A,Blocks real mapping,Author purpose-built IFC4 (D-02),Missing
+Fragments model,FRAG,not supplied,Detailed BIM web viewer,Missing,Required for detailed viewer,N/A,Derived from IFC,Convert via That Open IfcLoader,Missing
+Desktop GLB (IFC-derived),GLB,not supplied,Final desktop marketing model,Missing,Required,N/A,Derived from IFC,Generate + optimise,Missing
+Mobile GLB (IFC-derived),GLB,not supplied,Reduced mobile model,Missing,Required,N/A,Derived from IFC,Generate reduced geometry,Missing
+model-manifest.json,JSON,not supplied,Model package manifest,Missing,Required,N/A,Demonstration data,Author from PDF s10,Missing
+element-map.json,JSON,not supplied,GLB node -> IFC GlobalId map,Missing,Required,N/A,Model + IFC,Author placeholder then real,Missing
+properties.json,JSON,not supplied,Element property sets,Missing,Required,N/A,Demonstration data,Author from PDF s10,Missing
+quantities.json,JSON,not supplied,Quantity schedule,Missing,Required,N/A,Demonstration data,Author from PDF s10,Missing
+cost-data.json,JSON,not supplied,iCost cost data (demo),Missing,Required,N/A,Demonstration data,Author from PDF s10 (labelled demo),Missing
+carbon-data.json,JSON,not supplied,SustainZone carbon data (demo),Missing,Required,N/A,Demonstration data,Author from PDF s10 (labelled demo),Missing
+information-gaps.json,JSON,not supplied,Deliberate information gaps,Missing,Required,N/A,Demonstration data,Author from PDF s9.5/s10,Missing
+risk-scenarios.json,JSON,not supplied,Fire/access scenario data,Missing,Required,N/A,Demonstration data,Author from PDF s10.4 (labelled demo),Missing
+routes.json,JSON,not supplied,Routes/exits/safe zones,Missing,Required,N/A,Demonstration data,Author from PDF s9.3,Missing
+reports.json,JSON,not supplied,Report previews,Missing,Required,N/A,Demonstration data,Author from PDF s10,Missing
+Reference animatic (28s),MP4,not supplied,Motion reference / mobile fallback,Missing,Optional for build,N/A,Style frames,Use static posters until produced,Missing
+Style frames (hero/cost/fire),Image,not supplied,Visual fidelity reference,Missing,Optional,N/A,Brand,Derive from PDF s7 + current site,Missing
+Report sample outputs,PDF/Image,not supplied,Report preview reference,Missing,Optional,N/A,Capability matrix,Build labelled demo previews,Missing
+SustainZone logo,SVG/PNG,not supplied,Brand asset,Missing,Required for carbon mode,N/A,Brand,Request from owner,Missing
+Current website (new.i-cost.co.uk),Website,external,Visual/brand/structure reference,Available,Reference only,Reviewed 2026-06-17,None,Use as reference not template,Reference
