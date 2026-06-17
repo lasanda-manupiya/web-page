@@ -2,8 +2,8 @@
 
 **Project:** iCost + SustainZone — Integrated BIM Cost, Carbon and Risk Intelligence Platform website
 **Governing document:** `iCost_SustainZone_3D_Website_Project_Guide.pdf` (v1.0, June 2026) — **located, opened and fully read** via text extraction (all 12 pages / 20 sections).
-**Current phase:** Phase 3 — Full Website Implementation (built; awaiting Gate 3)
-**Current approval gate:** Approval Gate 3 (awaiting written owner approval). Gates 1 & 2 = APPROVED 2026-06-17.
+**Current phase:** Phase 4 — Quality Assurance (complete; awaiting Gate 4 / release sign-off)
+**Current approval gate:** Approval Gate 4 (awaiting written owner approval). Gates 1, 2 & 3 = APPROVED 2026-06-17.
 **Last updated:** 2026-06-17
 
 ---
@@ -14,8 +14,11 @@
 |-------|-------------|--------|
 | Phase 1 | Review, discovery, strategy, architecture, plan | **APPROVED (Gate 1, 2026-06-17)** |
 | Phase 2 | Technical prototype | **APPROVED (Gate 2, 2026-06-17)** |
-| Phase 3 | Full website implementation | **Built; 26 routes; production build green; awaiting Gate 3** |
-| Phase 4 | Quality assurance & release readiness | Not started (blocked by Gate 3) |
+| Phase 3 | Full website implementation | **APPROVED (Gate 3, 2026-06-17)** |
+| Phase 4 | Quality assurance & release readiness | **Complete; 3 defects fixed & retested; awaiting Gate 4 / release sign-off** |
+
+## Phase 4 QA
+Crawler "ALL CHECKS PASSED"; responsive mobile→large-desktop; mobile menu added; canonical + H1 defects fixed. See `phase-4/PHASE_4_QA_REPORT.md`. Pre-launch tooling (Lighthouse/CWV, axe, screen-reader, real-device) and owner inputs (domain, capability matrix, contact, logos) remain.
 
 ## Phase 2 prototype
 One responsive page on `localhost:3000`. See `phase-2/PHASE_2_PROTOTYPE_REPORT.md`. Run: `npm run build && npm start` (or `npm run dev`) in `D:\gitprojects\website for i cost group`.

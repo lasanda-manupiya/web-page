@@ -1,6 +1,6 @@
 // Server-rendered explanatory content (PDF §1.4, §12.2). Important text lives here, not in the canvas.
 
-export function HowItWorks() {
+export function HowItWorks({ headingLevel = 'h2' }: { headingLevel?: 'h1' | 'h2' }) {
   const steps = [
     ['Provide your model', 'Upload or share a BIM or IFC model. It becomes one shared source for every analysis.'],
     ['Model intelligence', 'We validate the structure and extract geometry, elements, spaces, materials, properties and quantities.'],
@@ -9,9 +9,10 @@ export function HowItWorks() {
     ['Compare', 'Current and proposed materials, designs or mitigations are compared so trade-offs are clear.'],
     ['Reports & recommendations', 'You receive decision-ready outputs for your selected objective.'],
   ];
+  const Heading = headingLevel;
   return (
     <section id="how" className="mx-auto max-w-content px-4 py-12" aria-labelledby="how-heading">
-      <h2 id="how-heading" className="text-2xl font-bold text-navy-900">How it works</h2>
+      <Heading id="how-heading" className="text-2xl font-bold text-navy-900 md:text-3xl">How it works</Heading>
       <p className="mt-2 max-w-2xl text-neutral-700">
         One model, analysed once, then read through the kinds of intelligence your project needs.
       </p>

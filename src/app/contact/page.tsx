@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }]} />
-      <Contact />
+      <Contact headingLevel="h1" />
     </>
   );
 }

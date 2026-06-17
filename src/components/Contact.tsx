@@ -3,14 +3,15 @@
 import { usePlatformStore } from '@/lib/store';
 import { objectives, organisations } from '@/lib/data';
 
-export default function Contact() {
+export default function Contact({ headingLevel = 'h2' }: { headingLevel?: 'h1' | 'h2' }) {
   const { objectiveId, organisationId } = usePlatformStore();
   const objective = objectives.find((o) => o.id === objectiveId)?.label;
   const organisation = organisations.find((o) => o.id === organisationId)?.label;
+  const Heading = headingLevel;
 
   return (
     <section id="contact" className="mx-auto max-w-content px-4 py-12" aria-labelledby="contact-heading">
-      <h2 id="contact-heading" className="text-2xl font-bold text-navy-900">Discuss your model</h2>
+      <Heading id="contact-heading" className="text-2xl font-bold text-navy-900 md:text-3xl">Discuss your model</Heading>
       <p className="mt-2 max-w-2xl text-neutral-700">
         Bring us your model and we will configure the intelligence around your project. Your selected
         objective and organisation are carried into the enquiry so the conversation starts with

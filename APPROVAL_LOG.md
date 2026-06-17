@@ -23,10 +23,15 @@ Record of approvals at each gate. No entry = not yet approved.
 - **Presented:** 2026-06-17
 - **Built:** 26 routes (home with 8-scene storyline + interactive demo; platform hub; 8 capability + 6 solution pages; how-it-works, 3d-demo, resources, about, contact; 404; sitemap.xml; robots.txt). Per-page unique metadata + canonical + OG; single H1; breadcrumbs; Organisation/WebSite/BreadcrumbList schema; internal links; UK-English honest copy; demonstration labelling. Production build green; no console errors.
 - **Report:** `phase-3/PHASE_3_REPORT.md`
-- **Decision:** _pending_
+- **Decision:** APPROVED — "proceed" 2026-06-17.
 
 ## Approval Gate 4 — QA, production build, release readiness
-- **Status:** Not reached (blocked by Gate 3)
+- **Status:** Awaiting owner approval (release readiness)
+- **Presented:** 2026-06-17
+- **Tested:** Responsive mobile→large-desktop; navigation + new mobile menu; selectors/pathways; 3D load + modes + selection; reduced-motion path; forms/CTAs; keyboard/focus/landmarks; internal links (0 broken); per-page metadata/canonical; JSON-LD validity; sitemap/robots; custom 404; production build (26/26, no console errors). 3 defects fixed and retested.
+- **Report:** `phase-4/PHASE_4_QA_REPORT.md`
+- **Not run here (pre-launch):** Lighthouse/CWV, automated axe, screen-reader, real-device cross-browser, WebGL-disabled force test.
+- **Decision:** _pending_
 
 ---
 *An approval here is recorded with date, approver and any conditions. Approved deliverables are then versioned (e.g. `_v02_approved`) and previous versions preserved.*

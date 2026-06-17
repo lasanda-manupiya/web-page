@@ -15,7 +15,7 @@ export default function HowItWorksPage() {
   return (
     <>
       <Breadcrumbs items={[{ name: 'Home', path: '/' }, { name: 'How it works', path: '/how-it-works' }]} />
-      <HowItWorks />
+      <HowItWorks headingLevel="h1" />
       <div className="mx-auto max-w-content px-4 pb-12">
         <Link href="/3d-demo" className="rounded-panel bg-accent px-5 py-3 font-medium text-white hover:bg-accent-600">
           Try the interactive demo

@@ -36,5 +36,15 @@ Format: date — change — affected files.
 - **Verified** production build green (26/26 prerendered), unique titles/H1s server-rendered, robots/sitemap correct, no console errors.
 - **Added** `phase-3/PHASE_3_REPORT.md`.
 
+## 2026-06-17 — Gate 3 approved; Phase 4 QA complete
+
+- **Approved** Gate 3 ("proceed").
+- **Fixed (QA-1)** missing mobile menu — added accessible disclosure menu to `Header` (hamburger, `aria-expanded`/`aria-controls`, Esc to close).
+- **Fixed (QA-2)** missing home canonical — added `pageMetadata` to `app/page.tsx`.
+- **Fixed (QA-3)** missing H1 on `/how-it-works` and `/contact` — added `headingLevel` prop to `HowItWorks`/`Contact`.
+- **Added** `scripts/qa-crawl.mjs` (route/link/metadata/JSON-LD crawler) — result: ALL CHECKS PASSED.
+- **Tested** responsive (mobile→large-desktop), navigation, selectors/pathways, 3D load/modes/selection, reduced motion, forms, keyboard/landmarks, links, metadata, structured data, sitemap/robots, 404, production build (no console errors).
+- **Added** `phase-4/PHASE_4_QA_REPORT.md`.
+
 ## Pending
-- Owner approval of Phase 3 (Approval Gate 3) before Phase 4 QA & release work begins.
+- Owner approval of Phase 4 (Approval Gate 4 / release). Pre-launch tooling (Lighthouse/CWV, axe, screen-reader, real-device) and owner inputs (domain D-05, capability matrix D-01, contact D-04, logos D-03) remain before go-live.
