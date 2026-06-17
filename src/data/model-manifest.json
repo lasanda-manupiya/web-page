@@ -1,0 +1,17 @@
+{
+  "modelId": "DEMO-OFFICE-001",
+  "title": "Demonstration office building",
+  "demonstrationStatus": "demonstration",
+  "note": "TEMPORARY placeholder marketing model (generic Sketchfab office). Not the purpose-built IFC4 terminal model required by the project guide §9.2. Contains NO real IFC semantics or GlobalId; all ids below are placeholder DEMO-* values. Every cost, carbon, gap and risk value is example data only and must be reviewed before publication (PDF §10).",
+  "source": "office_building.glb (Sketchfab export, glTF 2.0)",
+  "units": "metric",
+  "currency": "GBP",
+  "storeys": ["Level 00", "Level 01", "Level 02"],
+  "spaces": ["Open office", "Reception", "Service corridor", "Plant room", "Stair core"],
+  "selectableElementCount": 10,
+  "assets": {
+    "desktopGlb": "/models/office-desktop.glb",
+    "mobileGlb": "/models/office-mobile.glb",
+    "poster": "/posters/hero-poster.svg"
+  }
+}

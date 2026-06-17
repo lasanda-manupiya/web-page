@@ -1,0 +1,9 @@
+{
+  "_note": "Routes, exits and safe zones. PDF §9.3. Demonstration data.",
+  "demonstrationStatus": "demonstration",
+  "routes": [
+    { "id": "ROUTE_PRIMARY", "name": "Primary route", "type": "escape", "status": "Unavailable in demonstration scenario", "via": ["Open office", "Reception"] },
+    { "id": "ROUTE_EAST", "name": "Escape Route East", "type": "escape", "status": "Available (alternative)", "via": ["Service corridor", "Stair core"] }
+  ],
+  "safeZones": ["Safe external assembly area"]
+}

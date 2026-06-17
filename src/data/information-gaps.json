@@ -1,0 +1,13 @@
+{
+  "_note": "Deliberate information gaps. PDF §9.5 / §10.2 Gaps (missingField/severity/affectedAnalysis/recommendation/status). Demonstration data.",
+  "demonstrationStatus": "demonstration",
+  "gaps": {
+    "DEMO-GUID-0001": { "missingField": "Fire rating", "severity": "high", "affectedAnalysis": ["risk", "compliance"], "recommendation": "Add fire rating to property set", "status": "open" },
+    "DEMO-GUID-0004": { "missingField": "Cost code", "severity": "medium", "affectedAnalysis": ["cost"], "recommendation": "Assign cost code for commercial mapping", "status": "open" },
+    "DEMO-GUID-0006": { "missingField": "Carbon mapping (material reference)", "severity": "medium", "affectedAnalysis": ["carbon"], "recommendation": "Map material to an emission factor", "status": "open" },
+    "DEMO-GUID-0007": { "missingField": "Route classification", "severity": "medium", "affectedAnalysis": ["risk", "scenario"], "recommendation": "Classify as escape/service route", "status": "open" },
+    "DEMO-GUID-0008": { "missingField": "Material", "severity": "high", "affectedAnalysis": ["cost", "carbon"], "recommendation": "Specify material for cost and carbon", "status": "open" },
+    "DEMO-GUID-0009": { "missingField": "Maintenance information", "severity": "medium", "affectedAnalysis": ["asset", "facilities"], "recommendation": "Add maintenance schedule for FM readiness", "status": "open" }
+  },
+  "summary": { "elementsWithGaps": 6, "high": 2, "medium": 4, "complete": 4 }
+}

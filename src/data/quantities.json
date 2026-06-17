@@ -1,0 +1,13 @@
+{
+  "_note": "Quantities keyed by IFC GlobalId. PDF §10.2 Quantities (count/length/area/volume/weight/unit). Demonstration data.",
+  "DEMO-GUID-0001": { "count": 1, "area": 48, "volume": 14, "unit": "m" },
+  "DEMO-GUID-0002": { "count": 1, "area": 64, "unit": "m" },
+  "DEMO-GUID-0003": { "count": 1, "unit": "assembly" },
+  "DEMO-GUID-0004": { "count": 1, "area": 184, "volume": 55.3, "unit": "m" },
+  "DEMO-GUID-0005": { "count": 1, "area": 38, "unit": "m" },
+  "DEMO-GUID-0006": { "count": 1, "area": 62, "unit": "m" },
+  "DEMO-GUID-0007": { "count": 1, "area": 40, "unit": "m" },
+  "DEMO-GUID-0008": { "count": 1, "unit": "assembly" },
+  "DEMO-GUID-0009": { "count": 1, "area": 28, "unit": "m" },
+  "DEMO-GUID-0010": { "count": 1, "area": 55, "unit": "m" }
+}

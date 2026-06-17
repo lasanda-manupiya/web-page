@@ -15,5 +15,15 @@ Format: date — change — affected files.
 - **Added** Phase 1 deliverables 01–18.
 - **Status:** All Phase 1 outputs drafted; awaiting Approval Gate 1.
 
+## 2026-06-17 — Gate 1 approved; Phase 2 prototype built
+
+- **Approved** Gate 1 ("proceed" with recommended defaults).
+- **Scaffolded** Next.js 14.2.15 + TS + Tailwind + R3F/three + drei + GSAP + Zustand (versions pinned).
+- **Optimised** placeholder GLB → `public/models/office-desktop.glb` (0.32 MB) + `office-mobile.glb` (0.21 MB) via Draco + WebP (`scripts/optimise-glb.mjs`). Hosted Draco decoder locally at `public/draco/`.
+- **Authored** demonstration data package `src/data/*.json` keyed by placeholder IFC GlobalId, all flagged `demonstrationStatus`.
+- **Built** prototype: header, hero, 9×9 customer selectors + pathway engine, 3D viewer (loading/progress/error/poster), pointer + keyboard element selection, consistent info panel, 5 modes (Data/Cost/Carbon/Gaps/Risk), one GSAP scroll camera transition, reduced-motion / WebGL-unavailable / mobile fallbacks, evidence & limitations section, prototype enquiry form carrying selection context.
+- **Validated** in-browser: production build green, model loads (Draco), mode recolouring + selection confirmed, no console errors. Tuned camera framing; removed double-fetch preload.
+- **Added** `phase-2/PHASE_2_PROTOTYPE_REPORT.md`.
+
 ## Pending
-- Owner approval of Phase 1 (Approval Gate 1) before any Phase 2 build work begins.
+- Owner approval of Phase 2 (Approval Gate 2) before Phase 3 full website build begins.

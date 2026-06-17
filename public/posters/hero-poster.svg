@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Stylised view of a building model with cost, carbon, gap and risk overlays">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a3151"/>
+      <stop offset="1" stop-color="#061c2e"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f74a1"/>
+      <stop offset="1" stop-color="#1d5582"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <!-- floor grid -->
+  <g stroke="#1d5582" stroke-width="1" opacity="0.5">
+    <path d="M150 560 L1050 560 M250 620 L1150 620 M50 620 L950 620"/>
+    <path d="M300 200 L300 620 M600 150 L600 640 M900 200 L900 620"/>
+  </g>
+  <!-- building masses (isometric-ish) -->
+  <g>
+    <polygon points="350,520 600,400 850,520 600,640" fill="#0c3c60" stroke="#6f9cc0" stroke-width="2"/>
+    <polygon points="350,520 350,330 600,210 600,400" fill="url(#face)" stroke="#6f9cc0" stroke-width="2"/>
+    <polygon points="850,520 850,330 600,210 600,400" fill="#0a3151" stroke="#6f9cc0" stroke-width="2"/>
+    <!-- glazing strips -->
+    <g stroke="#a6c4db" stroke-width="2" opacity="0.7">
+      <path d="M385 470 L560 388 M385 430 L560 348 M385 390 L560 308"/>
+    </g>
+    <!-- cost hotspot marker (gold) -->
+    <circle cx="600" cy="300" r="14" fill="#c79a3a"/>
+    <!-- carbon marker (green) -->
+    <circle cx="720" cy="430" r="12" fill="#2f9e6f"/>
+    <!-- gap marker (amber, dashed) -->
+    <circle cx="470" cy="430" r="12" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="4 4"/>
+    <!-- risk marker (red) -->
+    <circle cx="600" cy="500" r="12" fill="#ef4444" opacity="0.85"/>
+  </g>
+  <text x="60" y="80" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">One Model. Complete Project Intelligence.</text>
+  <text x="60" y="120" fill="#a6c4db" font-family="Inter, Arial, sans-serif" font-size="20">Cost · Carbon · Information gaps · Risk</text>
+  <rect x="60" y="690" width="290" height="34" rx="4" fill="#fffbeb" stroke="#fbbf24"/>
+  <text x="75" y="713" fill="#92400e" font-family="Inter, Arial, sans-serif" font-size="16">Demonstration model — example only</text>
+</svg>

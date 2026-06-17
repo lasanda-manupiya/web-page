@@ -1,0 +1,12 @@
+{
+  "_note": "Report previews. PDF §10.2 Reporting (reportCategory/evidenceStatus/assumptionNote/demonstrationStatus). Demonstration previews only — not generated production reports.",
+  "demonstrationStatus": "demonstration",
+  "reports": [
+    { "id": "rep-quantities", "reportCategory": "Quantity schedule", "evidenceStatus": "demonstration", "assumptionNote": "Quantities from demonstration model", "modes": ["data"] },
+    { "id": "rep-cost", "reportCategory": "Commercial cost report", "evidenceStatus": "demonstration", "assumptionNote": "Demonstration rates; sources to be confirmed", "modes": ["cost"] },
+    { "id": "rep-carbon", "reportCategory": "Embodied carbon report", "evidenceStatus": "demonstration", "assumptionNote": "Demonstration factors; embodied (A1-A3) not whole-life", "modes": ["carbon"] },
+    { "id": "rep-gaps", "reportCategory": "Information gap schedule", "evidenceStatus": "demonstration", "assumptionNote": "Deliberate demonstration gaps", "modes": ["gaps"] },
+    { "id": "rep-risk", "reportCategory": "Risk and mitigation report", "evidenceStatus": "demonstration", "assumptionNote": "Concept demonstration; not a validated simulation", "modes": ["risk"] },
+    { "id": "rep-comparison", "reportCategory": "Option comparison / decision report", "evidenceStatus": "demonstration", "assumptionNote": "Illustrative comparison", "modes": ["cost", "carbon"] }
+  ]
+}

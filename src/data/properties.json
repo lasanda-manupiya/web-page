@@ -1,0 +1,13 @@
+{
+  "_note": "Element properties keyed by IFC GlobalId. PDF §10.2 Identity/Properties. Demonstration data.",
+  "DEMO-GUID-0001": { "material": "Reinforced concrete", "classification": "Uniclass Ss_25_10", "fireRating": null, "assetIdentifier": "EW-01", "maintenanceStatus": "Not required" },
+  "DEMO-GUID-0002": { "material": "Aluminium frame + double glazing", "classification": "Uniclass Ss_25_30", "fireRating": "30 min", "assetIdentifier": "CW-EAST", "maintenanceStatus": "Annual" },
+  "DEMO-GUID-0003": { "material": "Steel and concrete", "classification": "Uniclass Ss_30_12", "fireRating": "60 min", "assetIdentifier": "STAIR-01", "maintenanceStatus": "Annual" },
+  "DEMO-GUID-0004": { "material": "Reinforced concrete", "classification": "Uniclass Ss_20_05", "fireRating": "120 min", "assetIdentifier": "SLAB-L01", "maintenanceStatus": "Not required" },
+  "DEMO-GUID-0005": { "material": "Glazing unit", "classification": "Uniclass Pr_30_59", "fireRating": "None", "assetIdentifier": "GL-L02", "maintenanceStatus": "Annual" },
+  "DEMO-GUID-0006": { "material": "Gypsum partition system", "classification": "Uniclass Ss_25_13", "fireRating": "30 min", "assetIdentifier": "IP-04", "maintenanceStatus": "Not required" },
+  "DEMO-GUID-0007": { "material": "Blockwork", "classification": "Uniclass Ss_25_10", "fireRating": "60 min", "assetIdentifier": "SCW-01", "maintenanceStatus": "Not required" },
+  "DEMO-GUID-0008": { "material": null, "classification": "Uniclass Pr_40_70", "fireRating": "None", "assetIdentifier": "SHADE-01", "maintenanceStatus": "Biennial" },
+  "DEMO-GUID-0009": { "material": "Blockwork", "classification": "Uniclass Ss_25_10", "fireRating": "60 min", "assetIdentifier": "PRW-01", "maintenanceStatus": null },
+  "DEMO-GUID-0010": { "material": "Gypsum partition system", "classification": "Uniclass Ss_25_13", "fireRating": "30 min", "assetIdentifier": "IW-L02", "maintenanceStatus": "Not required" }
+}

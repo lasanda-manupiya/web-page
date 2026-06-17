@@ -1,0 +1,96 @@
+{
+  "_note": "Maps GLB node names -> placeholder IFC GlobalId -> data references. PDF §9.4. Placeholder DEMO-* ids; replace with real IFC GlobalId when the IFC4 model arrives (no component change needed). glbNodeName values are the ACTUAL node names in office_building.glb.",
+  "demonstrationStatus": "demonstration",
+  "elements": [
+    {
+      "ifcGlobalId": "DEMO-GUID-0001",
+      "ifcClass": "IfcWall",
+      "elementName": "External Wall 01",
+      "glbNodeName": "BLD_OFFICE_00_walls_exterior_0",
+      "storey": "Level 00",
+      "space": "Open office",
+      "selectable": true
+    },
+    {
+      "ifcGlobalId": "DEMO-GUID-0002",
+      "ifcClass": "IfcCurtainWall",
+      "elementName": "Curtain Wall Glazing East",
+      "glbNodeName": "BLD_OFFICE_01_glass_0",
+      "storey": "Level 00",
+      "space": "Reception",
+      "selectable": true
+    },
+    {
+      "ifcGlobalId": "DEMO-GUID-0003",
+      "ifcClass": "IfcStair",
+      "elementName": "Access Ramp / Stair Core",
+      "glbNodeName": "BLD_OFFICE_02_rams_0",
+      "storey": "Level 00",
+      "space": "Stair core",
+      "selectable": true
+    },
+    {
+      "ifcGlobalId": "DEMO-GUID-0004",
+      "ifcClass": "IfcSlab",
+      "elementName": "Concrete Slab Level 01",
+      "glbNodeName": "BLD_OFFICE_03_Material #17_0",
+      "storey": "Level 01",
+      "space": "Open office",
+      "selectable": true
+    },
+    {
+      "ifcGlobalId": "DEMO-GUID-0005",
+      "ifcClass": "IfcWindow",
+      "elementName": "Glazing Level 02",
+      "glbNodeName": "BLD_OFFICE_04_glass_0",
+      "storey": "Level 02",
+      "space": "Open office",
+      "selectable": true
+    },
+    {
+      "ifcGlobalId": "DEMO-GUID-0006",
+      "ifcClass": "IfcWall",
+      "elementName": "Internal Partition 04",
+      "glbNodeName": "BLD_OFFICE_05_walls [BLD_OFFICE_05]_0",
+      "storey": "Level 01",
+      "space": "Open office",
+      "selectable": true
+    },
+    {
+      "ifcGlobalId": "DEMO-GUID-0007",
+      "ifcClass": "IfcWall",
+      "elementName": "Service Corridor Wall",
+      "glbNodeName": "BLD_OFFICE_06_w2_0",
+      "storey": "Level 01",
+      "space": "Service corridor",
+      "selectable": true
+    },
+    {
+      "ifcGlobalId": "DEMO-GUID-0008",
+      "ifcClass": "IfcBuildingElementProxy",
+      "elementName": "Facade Shading / Blinds",
+      "glbNodeName": "BLD_OFFICE_08_Blinds_Roman_Hobbled_Blue_0",
+      "storey": "Level 02",
+      "space": "Open office",
+      "selectable": true
+    },
+    {
+      "ifcGlobalId": "DEMO-GUID-0009",
+      "ifcClass": "IfcWall",
+      "elementName": "Plant Room Wall",
+      "glbNodeName": "BLD_OFFICE_09_w2_0",
+      "storey": "Level 02",
+      "space": "Plant room",
+      "selectable": true
+    },
+    {
+      "ifcGlobalId": "DEMO-GUID-0010",
+      "ifcClass": "IfcWall",
+      "elementName": "Internal Wall Level 02",
+      "glbNodeName": "BLD_OFFICE_010_w2_0",
+      "storey": "Level 02",
+      "space": "Open office",
+      "selectable": true
+    }
+  ]
+}

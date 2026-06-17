@@ -1,0 +1,21 @@
+{
+  "_note": "SustainZone embodied carbon intelligence. PDF §10.2 Carbon. DEMONSTRATION VALUES ONLY — emission-factor sources and life-cycle modules to be confirmed (D-10). This is EMBODIED carbon (modules A1-A3), NOT whole-life carbon.",
+  "demonstrationStatus": "demonstration",
+  "scope": "Embodied carbon (A1-A3 demonstration) — not whole-life",
+  "factorSourceNote": "Demonstration emission factors — sources to be confirmed",
+  "unit": "tCO2e",
+  "elements": {
+    "DEMO-GUID-0001": { "materialReference": "MAT_CONCRETE_01", "emissionFactor": 0.1, "factorSource": "Demo factor set", "lifeCycleModule": "A1-A3", "elementCarbon": 4.8 },
+    "DEMO-GUID-0002": { "materialReference": "MAT_GLAZING_AL", "emissionFactor": 0.097, "factorSource": "Demo factor set", "lifeCycleModule": "A1-A3", "elementCarbon": 6.2 },
+    "DEMO-GUID-0003": { "materialReference": "MAT_STEEL_CONC", "emissionFactor": null, "factorSource": "Demo factor set", "lifeCycleModule": "A1-A3", "elementCarbon": 1.9 },
+    "DEMO-GUID-0004": { "materialReference": "MAT_CONCRETE_01", "emissionFactor": 0.127, "factorSource": "Demo factor set", "lifeCycleModule": "A1-A3", "elementCarbon": 23.4 },
+    "DEMO-GUID-0005": { "materialReference": "MAT_GLAZING", "emissionFactor": 0.021, "factorSource": "Demo factor set", "lifeCycleModule": "A1-A3", "elementCarbon": 0.8 },
+    "DEMO-GUID-0006": { "materialReference": null, "emissionFactor": null, "factorSource": null, "lifeCycleModule": "A1-A3", "elementCarbon": null, "note": "Carbon mapping missing" },
+    "DEMO-GUID-0007": { "materialReference": "MAT_BLOCK", "emissionFactor": 0.0225, "factorSource": "Demo factor set", "lifeCycleModule": "A1-A3", "elementCarbon": 0.9 },
+    "DEMO-GUID-0008": { "materialReference": null, "emissionFactor": null, "factorSource": null, "lifeCycleModule": "A1-A3", "elementCarbon": null, "note": "Material missing — carbon cannot be estimated" },
+    "DEMO-GUID-0009": { "materialReference": "MAT_BLOCK", "emissionFactor": 0.025, "factorSource": "Demo factor set", "lifeCycleModule": "A1-A3", "elementCarbon": 0.7 },
+    "DEMO-GUID-0010": { "materialReference": "MAT_GYPSUM", "emissionFactor": 0.02, "factorSource": "Demo factor set", "lifeCycleModule": "A1-A3", "elementCarbon": 1.1 }
+  },
+  "projectTotalDemo": 39.8,
+  "topHotspots": ["DEMO-GUID-0004", "DEMO-GUID-0002", "DEMO-GUID-0001"]
+}

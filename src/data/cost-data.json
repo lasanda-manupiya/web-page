@@ -1,0 +1,19 @@
+{
+  "_note": "iCost commercial intelligence. PDF §10.2 Cost. DEMONSTRATION VALUES ONLY — rate sources to be confirmed (DECISION D-10). Currency GBP.",
+  "demonstrationStatus": "demonstration",
+  "rateSourceNote": "Demonstration rates — not a verified rate library",
+  "elements": {
+    "DEMO-GUID-0001": { "rateSource": "Demo rate set", "unitCost": 384, "materialCost": 9800, "labourCost": 6200, "installationCost": 2450, "elementTotal": 18450, "currency": "GBP" },
+    "DEMO-GUID-0002": { "rateSource": "Demo rate set", "unitCost": 379, "materialCost": 14200, "labourCost": 7100, "installationCost": 2925, "elementTotal": 24225, "currency": "GBP" },
+    "DEMO-GUID-0003": { "rateSource": "Demo rate set", "unitCost": 28900, "materialCost": 16500, "labourCost": 9200, "installationCost": 3200, "elementTotal": 28900, "currency": "GBP" },
+    "DEMO-GUID-0004": { "rateSource": "Demo rate set", "unitCost": 210, "materialCost": 22100, "labourCost": 11600, "installationCost": 5000, "elementTotal": 38700, "currency": "GBP", "costCode": null },
+    "DEMO-GUID-0005": { "rateSource": "Demo rate set", "unitCost": 332, "materialCost": 8200, "labourCost": 3100, "installationCost": 1300, "elementTotal": 12600, "currency": "GBP" },
+    "DEMO-GUID-0006": { "rateSource": "Demo rate set", "unitCost": 64, "materialCost": 2100, "labourCost": 1400, "installationCost": 450, "elementTotal": 3950, "currency": "GBP" },
+    "DEMO-GUID-0007": { "rateSource": "Demo rate set", "unitCost": 80, "materialCost": 1800, "labourCost": 1050, "installationCost": 350, "elementTotal": 3200, "currency": "GBP" },
+    "DEMO-GUID-0008": { "rateSource": "Demo rate set", "unitCost": 7250, "materialCost": null, "labourCost": 3100, "installationCost": 900, "elementTotal": 7250, "currency": "GBP", "note": "Material missing — material cost incomplete" },
+    "DEMO-GUID-0009": { "rateSource": "Demo rate set", "unitCost": 93, "materialCost": 1450, "labourCost": 850, "installationCost": 300, "elementTotal": 2600, "currency": "GBP" },
+    "DEMO-GUID-0010": { "rateSource": "Demo rate set", "unitCost": 75, "materialCost": 2200, "labourCost": 1500, "installationCost": 400, "elementTotal": 4100, "currency": "GBP" }
+  },
+  "projectTotalDemo": 143975,
+  "topHotspots": ["DEMO-GUID-0004", "DEMO-GUID-0003", "DEMO-GUID-0002"]
+}

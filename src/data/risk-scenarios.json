@@ -1,0 +1,27 @@
+{
+  "_note": "Risk and scenario intelligence. PDF §10.4 first demonstration scenario. CONCEPT DEMONSTRATION ONLY — not an engineering-validated fire simulation (PDF §10.4 / §11).",
+  "demonstrationStatus": "demonstration",
+  "validationStatement": "Concept demonstration only. Not an engineering-validated fire simulation.",
+  "elementRisk": {
+    "DEMO-GUID-0001": { "severity": "medium", "reason": "Missing fire rating affects compliance assessment" },
+    "DEMO-GUID-0003": { "severity": "high", "reason": "Escape route critical asset" },
+    "DEMO-GUID-0004": { "severity": "medium", "reason": "Primary floor plate" },
+    "DEMO-GUID-0007": { "severity": "medium", "reason": "Service corridor on affected route" },
+    "DEMO-GUID-0002": { "severity": "low", "reason": "Reception glazing" }
+  },
+  "scenarios": [
+    {
+      "scenarioId": "FIRE_CONCOURSE_A",
+      "status": "Demonstration only",
+      "hazardType": "Fire and smoke visualisation",
+      "origin": "Open office (Zone A)",
+      "affectedZones": ["Open office", "Reception", "Service corridor"],
+      "affectedAssets": ["DEMO-GUID-0003", "DEMO-GUID-0007", "DEMO-GUID-0001"],
+      "primaryRoute": "Unavailable in the demonstration state",
+      "alternativeRoute": "Escape Route East",
+      "riskLevel": "High (example only)",
+      "mitigation": "Review compartmentation, exit capacity and emergency route planning",
+      "validationStatement": "Not an engineering-validated fire simulation"
+    }
+  ]
+}

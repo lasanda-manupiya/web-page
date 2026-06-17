@@ -43,6 +43,19 @@ Status values: draft | provisional | awaiting approval | approved | superseded.
 | 17_IMPLEMENTATION_SEQUENCE.md | Build sequence across phases | draft |
 | 18_PHASE_ACCEPTANCE_CRITERIA.md | Acceptance criteria per phase | draft |
 
+## Phase 2 prototype (`src/`, `public/`, `scripts/`, `phase-2/`)
+
+| Area | Files | Status |
+|------|-------|--------|
+| Report | phase-2/PHASE_2_PROTOTYPE_REPORT.md | awaiting approval |
+| Config | package.json, tsconfig.json, next.config.mjs, postcss.config.mjs, tailwind.config.ts, .eslintrc.json | provisional |
+| GLB tooling | scripts/optimise-glb.mjs | provisional |
+| Demo data | src/data/*.json (11 files) | provisional (demonstration data) |
+| Lib | src/lib/{types,data,pathway-engine,modes,store,webgl}.ts | provisional |
+| Components | src/components/** (Header, Footer, Hero, CustomerSelector, PathwaySummary, DemoBadge, EvidenceLimits, ContentSections, Contact, StoryExperience, three/*, three/fallbacks/*) | provisional |
+| App | src/app/{layout,page,not-found}.tsx, globals.css | provisional |
+| Public assets | public/models/office-{desktop,mobile}.glb, public/draco/*, public/posters/hero-poster.svg | provisional |
+
 ## Supplied source assets
 
 | File | Location | Purpose | Status |

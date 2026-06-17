@@ -1,0 +1,25 @@
+{
+  "_note": "Customer pathway personalisation config. Implements phase-1/08_CUSTOMER_PATHWAY_RULES. Editable without code changes.",
+  "objectives": [
+    { "id": "understand-data", "label": "Understand my BIM or asset data", "mode": "data", "brand": "neutral", "stages": ["Model analysis", "Property extraction", "Quantity review", "Information-gap review", "Relevant report"] },
+    { "id": "extract-quantities", "label": "Extract project quantities", "mode": "data", "brand": "neutral", "stages": ["Model analysis", "Property extraction", "Quantity extraction", "Gap review", "Schedule output"] },
+    { "id": "estimate-costs", "label": "Estimate project costs", "mode": "cost", "brand": "icost", "stages": ["Model analysis", "Quantity extraction", "Gap review", "iCost cost assessment", "Cost comparison", "Commercial report"] },
+    { "id": "measure-carbon", "label": "Measure embodied carbon", "mode": "carbon", "brand": "sustain", "stages": ["Material & quantity extraction", "SustainZone carbon assessment", "Hotspot analysis", "Alternative comparison", "Carbon report"] },
+    { "id": "identify-gaps", "label": "Identify missing model information", "mode": "gaps", "brand": "neutral", "stages": ["Model analysis", "Completeness check", "Gap classification", "Affected-analysis review", "Improvement plan"] },
+    { "id": "understand-risks", "label": "Understand asset or project risks", "mode": "risk", "brand": "neutral", "stages": ["Model analysis", "Spatial & asset extraction", "Risk review", "Scenario context", "Risk & mitigation report"] },
+    { "id": "model-scenario", "label": "Model an emergency scenario", "mode": "risk", "brand": "neutral", "stages": ["Model analysis", "Spatial data extraction", "Scenario modelling", "Impact assessment", "Route analysis", "Mitigation report"] },
+    { "id": "compare-alternatives", "label": "Compare design alternatives", "mode": "cost", "brand": "both", "stages": ["Model analysis", "Cost & carbon assessment", "Option comparison", "Decision report"] },
+    { "id": "generate-reports", "label": "Generate project reports", "mode": "data", "brand": "neutral", "stages": ["Model analysis", "Selected intelligence", "Option comparison", "Recommendation report"] }
+  ],
+  "organisations": [
+    { "id": "contractor-qs", "label": "Contractor or quantity surveyor", "outputs": ["Quantity schedule", "Cost estimate", "Comparison", "Commercial summary"], "page": "/solutions/contractors" },
+    { "id": "developer-owner", "label": "Developer or project owner", "outputs": ["Cost estimate", "Carbon report", "Option comparison", "Executive decision report"], "page": "/solutions/asset-managers" },
+    { "id": "asset-fm", "label": "Asset or facilities manager", "outputs": ["Asset report", "Gap schedule", "Route review", "Digital-twin readiness summary"], "page": "/solutions/asset-managers" },
+    { "id": "aviation", "label": "Aviation organisation or airport operator", "outputs": ["Risk heatmap", "Scenario visualisation", "Affected-asset summary", "Route analysis"], "page": "/solutions/aviation" },
+    { "id": "transport-infrastructure", "label": "Transport or infrastructure organisation", "outputs": ["Asset report", "Cost & carbon outputs", "Route analysis", "Resilience recommendations"], "page": "/solutions/transport-infrastructure" },
+    { "id": "insurance-risk", "label": "Insurance or risk organisation", "outputs": ["Risk heatmap", "Affected-asset report", "Mitigation comparison", "Evidence report"], "page": "/solutions/insurance-risk" },
+    { "id": "sustainability", "label": "Sustainability team", "outputs": ["Material carbon schedule", "Hotspot summary", "Alternatives", "Calculation assumptions"], "page": "/solutions/sustainability" },
+    { "id": "engineering-consultant", "label": "Engineering consultant", "outputs": ["Model review", "Quantities", "Selected assessment", "Client recommendation report"], "page": "/platform" },
+    { "id": "public-sector", "label": "Public sector or estate owner", "outputs": ["Estate summary", "Prioritisation", "Improvement plan", "Investment report"], "page": "/platform" }
+  ]
+}

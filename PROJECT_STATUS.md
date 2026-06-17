@@ -2,8 +2,8 @@
 
 **Project:** iCost + SustainZone — Integrated BIM Cost, Carbon and Risk Intelligence Platform website
 **Governing document:** `iCost_SustainZone_3D_Website_Project_Guide.pdf` (v1.0, June 2026) — **located, opened and fully read** via text extraction (all 12 pages / 20 sections).
-**Current phase:** Phase 1 — Review, Discovery and Implementation Plan
-**Current approval gate:** Approval Gate 1 (awaiting written owner approval)
+**Current phase:** Phase 2 — Technical Prototype (built; awaiting Gate 2)
+**Current approval gate:** Approval Gate 2 (awaiting written owner approval). Gate 1 = APPROVED 2026-06-17.
 **Last updated:** 2026-06-17
 
 ---
@@ -12,10 +12,13 @@
 
 | Phase | Description | Status |
 |-------|-------------|--------|
-| Phase 1 | Review, discovery, strategy, architecture, plan | **In progress — completing all Phase 1 outputs** |
-| Phase 2 | Technical prototype | Not started (blocked by Gate 1) |
+| Phase 1 | Review, discovery, strategy, architecture, plan | **APPROVED (Gate 1, 2026-06-17)** |
+| Phase 2 | Technical prototype | **Built; production build green; awaiting Gate 2** |
 | Phase 3 | Full website implementation | Not started (blocked by Gate 2) |
 | Phase 4 | Quality assurance & release readiness | Not started (blocked by Gate 3) |
+
+## Phase 2 prototype
+One responsive page on `localhost:3000`. See `phase-2/PHASE_2_PROTOTYPE_REPORT.md`. Run: `npm run build && npm start` (or `npm run dev`) in `D:\gitprojects\website for i cost group`.
 
 ## Phase 1 deliverable status
 

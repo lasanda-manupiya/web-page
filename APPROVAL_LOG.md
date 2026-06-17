@@ -5,14 +5,18 @@ Record of approvals at each gate. No entry = not yet approved.
 ---
 
 ## Approval Gate 1 — Phase 1 strategy, sitemap, architecture, asset strategy, implementation plan
-- **Status:** Awaiting owner approval
+- **Status:** APPROVED
 - **Presented:** 2026-06-17
-- **Decision:** _pending_
-- **Approver:** _pending_
-- **Notes:** _pending_
+- **Decision:** Approved — "proceed" with recommended defaults (P-01…P-06, D-07/D-12 adopted)
+- **Approver:** Owner (lasandamanupiya@gmail.com)
+- **Notes:** Phase 2 to use placeholder `office_building.glb` + clearly-labelled demonstration data. D-01..D-05 brand/IFC/contact decisions still open and tracked; do not affect prototype build.
 
 ## Approval Gate 2 — Technical prototype, interaction model, model mapping, fallback behaviour
-- **Status:** Not reached (blocked by Gate 1)
+- **Status:** Awaiting owner approval
+- **Presented:** 2026-06-17
+- **Built:** One responsive page; hero + 9×9 selectors + pathway engine; optimised placeholder GLB (36 MB → 0.32/0.21 MB) with Draco+WebP; loading/progress/error/poster states; element selection (pointer + keyboard); consistent info panel; 5 modes (Data/Cost/Carbon/Gaps/Risk); one GSAP scroll camera transition; reduced-motion / WebGL-unavailable / mobile fallbacks; demonstration-data labelling. Production build green; validated in-browser with no console errors.
+- **Report:** `phase-2/PHASE_2_PROTOTYPE_REPORT.md`
+- **Decision:** _pending_
 
 ## Approval Gate 3 — Full website structure, content, design, functionality
 - **Status:** Not reached
