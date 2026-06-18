@@ -52,7 +52,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'Segoe UI', 'Arial', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'Segoe UI', 'Arial', 'sans-serif'],
       },
       borderRadius: {
         panel: '6px', // straight-edged / lightly rounded per PDF §7.1

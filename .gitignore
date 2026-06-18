@@ -1,6 +1,7 @@
 office_building.glb
 node_modules/
 .next/
+out/
 public/brand/icost-group-logo.png
 
 # Environment / secrets
