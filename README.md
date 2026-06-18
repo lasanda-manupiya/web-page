@@ -26,8 +26,8 @@ npm start            # optional local preview of out/ on PORT (default 3000)
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `NEXT_PUBLIC_SITE_URL` | `https://platform.i-cost.co.uk` | Canonical/OG/sitemap base URL. **Set to your real domain.** |
-| `NEXT_PUBLIC_INDEXABLE` | `false` | `true` makes the site indexable (robots `Allow`, pages `index`). Keep `false` until launch. |
+| `NEXT_PUBLIC_SITE_URL` | `https://new.i-cost.co.uk` | Canonical/OG/sitemap base URL. **Set to your real domain.** |
+| `NEXT_PUBLIC_INDEXABLE` | `true` | Public production pages are indexable by default. Set `false` only for non-production preview builds. |
 
 
 Create `.env.production` (or set in the host panel):
