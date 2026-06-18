@@ -168,7 +168,7 @@ export const CAPABILITIES: PageContent[] = [
     related: [
       { href: '/solutions/sustainability', label: 'For sustainability teams' },
       { href: '/bim-cost-estimation', label: 'Cost estimation' },
-      { href: '/scenario-modelling', label: 'Compare alternatives' },
+      { href: 'https://sustainzone.earth/', label: 'SustainZone ↗' },
     ],
     cta: { href: '/contact', label: 'Request a carbon demonstration' },
   },
@@ -403,7 +403,7 @@ export const SOLUTIONS: PageContent[] = [
     related: [
       { href: '/bim-carbon-assessment', label: 'Carbon assessment' },
       { href: '/bim-cost-estimation', label: 'Cost estimation' },
-      { href: '/scenario-modelling', label: 'Compare alternatives' },
+      { href: 'https://sustainzone.earth/', label: 'SustainZone ↗' },
     ],
     cta: { href: '/contact', label: 'Request a carbon demonstration' },
   },

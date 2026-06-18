@@ -76,5 +76,13 @@ Scope: layout, styling, visual hierarchy only. No content, routes, functionality
 - **Linked background images:** subtle Unsplash backgrounds (heavy white overlay) on the Capability Cards, Evidence, and Contact sections (loaded from `images.unsplash.com`). Cards/text sit in opaque panels for readability.
 - **Media credits/licences** documented in README. Verified: build green, no overflow (desktop+mobile), video playing on both, no console errors.
 
+## 2026-06-18 — Working contact email, active nav, SustainZone links
+
+- **Contact form now sends email.** New `POST /api/contact` (nodemailer, Node runtime) emails enquiries to `kevin@i-cost.co.uk`, **CC `connect@sustainzone.earth`**, reply-to the visitor, with objective/organisation context. `Contact.tsx` POSTs with sending/sent/error states + honeypot. Recipients are env-overridable (`CONTACT_TO`/`CONTACT_CC`); SMTP via `SMTP_*` env. Without SMTP it returns a clear "not configured" message (never silently drops). Added `.env.example`; `.env*` git-ignored.
+- **Active nav highlighting.** Header uses `usePathname` — the current item is highlighted (green underline + bold, `aria-current="page"`): capability pages light **Platform**, `/solutions/*` light **Solutions**, and How it works / Resources / About light themselves. Mobile menu too. `NavDropdown` accepts an `active` prop.
+- **SustainZone hyperlinks** → https://sustainzone.earth/ (new tab) in the footer, the About intro, and the Related lists of the carbon-assessment and sustainability pages (`ContentPage` opens external related links in a new tab).
+- **README**: added SMTP env vars, a "Contact form" section, and an explicit "What to upload to Hestia" file list.
+- Verified: build green; `/api/contact` returns 503 "not configured" until SMTP set; nav highlight correct on `/resources` and capability pages; footer SustainZone link present; no console errors.
+
 ## Pending
-- Owner approval of Phase 4 (Approval Gate 4 / release). Pre-launch tooling (Lighthouse/CWV, axe, screen-reader, real-device) and owner inputs (domain D-05, capability matrix D-01, contact D-04, logos D-03) remain before go-live.
+- Owner approval of Phase 4 (Approval Gate 4 / release). Pre-launch tooling (Lighthouse/CWV, axe, screen-reader, real-device) and owner inputs (domain D-05, capability matrix D-01, **SMTP mailbox credentials for the contact form**, logos D-03) remain before go-live.

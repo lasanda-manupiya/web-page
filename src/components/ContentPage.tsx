@@ -74,13 +74,23 @@ export default function ContentPage({ page }: { page: PageContent }) {
         <section className="mt-8">
           <h2 className="text-lg font-semibold text-ink">Related</h2>
           <ul className="mt-2 flex flex-wrap gap-3">
-            {page.related.map((r) => (
-              <li key={r.href}>
-                <Link href={r.href} className="rounded-panel border border-line px-3 py-1.5 text-sm text-ink hover:bg-mist">
-                  {r.label}
-                </Link>
-              </li>
-            ))}
+            {page.related.map((r) => {
+              const external = r.href.startsWith('http');
+              const cls = 'rounded-panel border border-line px-3 py-1.5 text-sm text-ink hover:bg-mist';
+              return (
+                <li key={r.href}>
+                  {external ? (
+                    <a href={r.href} target="_blank" rel="noopener noreferrer" className={cls}>
+                      {r.label}
+                    </a>
+                  ) : (
+                    <Link href={r.href} className={cls}>
+                      {r.label}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </section>
 

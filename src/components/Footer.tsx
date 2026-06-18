@@ -30,6 +30,17 @@ export default function Footer() {
             Integrated BIM Cost, Carbon and Risk Intelligence Platform. One model becomes connected
             cost, carbon, asset, information-gap and risk intelligence.
           </p>
+          <p className="mt-3 text-sm text-muted">
+            Carbon intelligence by{' '}
+            <a
+              href="https://sustainzone.earth/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-accent-700 hover:underline"
+            >
+              SustainZone ↗
+            </a>
+          </p>
         </div>
         <nav className="text-sm" aria-label="Platform">
           <p className="font-semibold text-ink">Platform</p>

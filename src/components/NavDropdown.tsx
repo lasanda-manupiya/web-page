@@ -16,10 +16,12 @@ export default function NavDropdown({
   label,
   overviewHref,
   items,
+  active = false,
 }: {
   label: string;
   overviewHref: string;
   items: NavItem[];
+  active?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -61,8 +63,12 @@ export default function NavDropdown({
         type="button"
         aria-haspopup="true"
         aria-expanded={open}
+        aria-current={active ? 'page' : undefined}
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1 transition-colors hover:text-ink"
+        className={
+          'flex items-center gap-1 border-b-2 pb-0.5 transition-colors ' +
+          (active ? 'border-accent font-semibold text-ink' : 'border-transparent hover:text-ink')
+        }
       >
         {label}
         <svg

@@ -18,9 +18,16 @@ export default function AboutPage() {
       <header className="mx-auto max-w-content px-4 pt-4">
         <h1 className="text-3xl font-bold text-ink md:text-4xl">About iCost and SustainZone</h1>
         <p className="mt-3 max-w-2xl text-lg text-muted">
-          Two specialisms, one connected platform. iCost provides commercial (cost) intelligence and
-          SustainZone provides carbon intelligence, both reading the same model so results stay
-          consistent.
+          Two specialisms, one connected platform. iCost provides commercial (cost) intelligence and{' '}
+          <a
+            href="https://sustainzone.earth/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-accent-700 hover:underline"
+          >
+            SustainZone
+          </a>{' '}
+          provides carbon intelligence, both reading the same model so results stay consistent.
         </p>
       </header>
       <div className="mx-auto max-w-content px-4 py-8 max-w-2xl">

@@ -2,12 +2,14 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import NavDropdown from './NavDropdown';
 import { CAPABILITIES, SOLUTIONS } from '@/content/pages';
 
 const PLATFORM_ITEMS = CAPABILITIES.map((c) => ({ href: c.url, label: c.navLabel }));
 const SOLUTION_ITEMS = SOLUTIONS.map((s) => ({ href: s.url, label: s.navLabel }));
+const CAPABILITY_URLS = CAPABILITIES.map((c) => c.url);
 
 // Flat links used in the mobile menu.
 const NAV = [
@@ -20,6 +22,19 @@ const NAV = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname() || '/';
+
+  const active = {
+    platform: pathname === '/platform' || CAPABILITY_URLS.includes(pathname),
+    how: pathname === '/how-it-works',
+    solutions: pathname.startsWith('/solutions'),
+    resources: pathname.startsWith('/resources'),
+    about: pathname === '/about',
+  };
+
+  const linkClass = (isActive: boolean) =>
+    'border-b-2 pb-0.5 transition-colors ' +
+    (isActive ? 'border-accent font-semibold text-ink' : 'border-transparent hover:text-ink');
 
   useEffect(() => {
     if (!open) return;
@@ -44,11 +59,11 @@ export default function Header() {
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-7 text-sm font-medium text-muted md:flex">
-          <NavDropdown label="Platform" overviewHref="/platform" items={PLATFORM_ITEMS} />
-          <Link href="/how-it-works" className="transition-colors hover:text-ink">How it works</Link>
-          <NavDropdown label="Solutions" overviewHref="/platform" items={SOLUTION_ITEMS} />
-          <Link href="/resources" className="transition-colors hover:text-ink">Resources</Link>
-          <Link href="/about" className="transition-colors hover:text-ink">About</Link>
+          <NavDropdown label="Platform" overviewHref="/platform" items={PLATFORM_ITEMS} active={active.platform} />
+          <Link href="/how-it-works" aria-current={active.how ? 'page' : undefined} className={linkClass(active.how)}>How it works</Link>
+          <NavDropdown label="Solutions" overviewHref="/platform" items={SOLUTION_ITEMS} active={active.solutions} />
+          <Link href="/resources" aria-current={active.resources ? 'page' : undefined} className={linkClass(active.resources)}>Resources</Link>
+          <Link href="/about" aria-current={active.about ? 'page' : undefined} className={linkClass(active.about)}>About</Link>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -82,17 +97,33 @@ export default function Header() {
       {open && (
         <nav id="mobile-nav" aria-label="Primary (mobile)" className="border-t border-line bg-white md:hidden">
           <ul className="mx-auto flex max-w-content flex-col px-4 py-2">
-            {NAV.map((n) => (
-              <li key={n.href}>
-                <Link
-                  href={n.href}
-                  className="block rounded-md px-2 py-3 text-ink hover:bg-mist"
-                  onClick={() => setOpen(false)}
-                >
-                  {n.label}
-                </Link>
-              </li>
-            ))}
+            {NAV.map((n) => {
+              const isActive =
+                n.href === '/platform'
+                  ? active.platform
+                  : n.href === '/how-it-works'
+                    ? active.how
+                    : n.href.startsWith('/solutions')
+                      ? active.solutions
+                      : n.href === '/resources'
+                        ? active.resources
+                        : active.about;
+              return (
+                <li key={n.href}>
+                  <Link
+                    href={n.href}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={
+                      'block rounded-md px-2 py-3 hover:bg-mist ' +
+                      (isActive ? 'border-l-2 border-accent font-semibold text-ink' : 'text-ink')
+                    }
+                    onClick={() => setOpen(false)}
+                  >
+                    {n.label}
+                  </Link>
+                </li>
+              );
+            })}
             <li>
               <Link
                 href="/contact"
