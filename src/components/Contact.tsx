@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { usePlatformStore } from '@/lib/store';
 import { objectives, organisations } from '@/lib/data';
 
-type Status = 'idle' | 'sending' | 'sent' | 'error';
+type Status = 'idle' | 'sent';
 
 export default function Contact({ headingLevel = 'h2' }: { headingLevel?: 'h1' | 'h2' }) {
   const { objectiveId, organisationId } = usePlatformStore();
@@ -13,32 +13,29 @@ export default function Contact({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
   const Heading = headingLevel;
 
   const [status, setStatus] = useState<Status>('idle');
-  const [error, setError] = useState('');
-
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
-    setStatus('sending');
-    setError('');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, objective: objective ?? '', organisation: organisation ?? '' }),
-      });
-      const json = await res.json();
-      if (res.ok && json.ok) {
-        setStatus('sent');
-        form.reset();
-      } else {
-        setStatus('error');
-        setError(json.error || 'Something went wrong. Please try again.');
-      }
-    } catch {
-      setStatus('error');
-      setError('Network error. Please try again, or email us directly.');
-    }
+    const data = new FormData(form);
+    const name = String(data.get('name') ?? '');
+    const email = String(data.get('email') ?? '');
+    const message = String(data.get('message') ?? '');
+    const subject = `I-Cost enquiry from ${name || 'website visitor'}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Objective: ${objective ?? 'Not selected'}`,
+      `Organisation: ${organisation ?? 'Not selected'}`,
+      '',
+      'About the model:',
+      message,
+    ].join('\n');
+
+    window.location.href = `mailto:kevin@i-cost.co.uk?cc=connect@sustainzone.earth&subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+    setStatus('sent');
+    form.reset();
   }
 
   return (
@@ -73,9 +70,10 @@ export default function Contact({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
             role="status"
             className="mt-6 max-w-xl rounded-panel border border-accent/40 bg-soft p-4 text-sm text-ink"
           >
-            <p className="font-semibold">Thank you — your enquiry has been sent.</p>
+            <p className="font-semibold">Thank you — your enquiry email is ready.</p>
             <p className="mt-1 text-muted">
-              We&apos;ll be in touch shortly. A copy has gone to our cost and sustainability teams.
+              Your email app should now open with the enquiry prepared. If it does not, email
+              kevin@i-cost.co.uk directly and copy connect@sustainzone.earth.
             </p>
           </div>
         ) : (
@@ -104,21 +102,15 @@ export default function Contact({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
               <textarea id="message" name="message" rows={4} required className="mt-1 w-full rounded-panel border border-line px-3 py-2" />
             </div>
 
-            {status === 'error' && (
-              <p role="alert" className="rounded-panel border border-red-300 bg-red-50 p-3 text-sm text-red-800">
-                {error}
-              </p>
-            )}
-
             <button
               type="submit"
-              disabled={status === 'sending'}
-              className="w-fit rounded-panel bg-accent px-4 py-2 font-medium text-white hover:bg-accent-600 disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-fit rounded-panel bg-accent px-4 py-2 font-medium text-white hover:bg-accent-600"
             >
-              {status === 'sending' ? 'Sending…' : 'Submit enquiry'}
+              Prepare email enquiry
             </button>
             <p className="text-xs text-muted">
-              Your enquiry is emailed to our team. We use your details only to respond to you.
+              This static website opens your email app with the enquiry details filled in. We use your
+              details only to respond to you.
             </p>
           </form>
         )}

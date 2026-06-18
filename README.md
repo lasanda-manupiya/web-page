@@ -15,11 +15,11 @@ npm install
 npm run dev          # http://localhost:3000
 ```
 
-Production:
+Production static export:
 
 ```bash
-npm run build
-npm start            # serves the production build on PORT (default 3000)
+npm run build        # writes static files to out/
+npm start            # optional local preview of out/ on PORT (default 3000)
 ```
 
 ## Environment variables
@@ -28,90 +28,53 @@ npm start            # serves the production build on PORT (default 3000)
 |----------|---------|---------|
 | `NEXT_PUBLIC_SITE_URL` | `https://platform.i-cost.co.uk` | Canonical/OG/sitemap base URL. **Set to your real domain.** |
 | `NEXT_PUBLIC_INDEXABLE` | `false` | `true` makes the site indexable (robots `Allow`, pages `index`). Keep `false` until launch. |
-| `PORT` | `3000` | Port for `npm start`. |
-| `SMTP_HOST` | — | **Required for the contact form.** Your mail server host (e.g. `mail.i-cost.co.uk`). |
-| `SMTP_PORT` | `587` | SMTP port (`465` if using SSL). |
-| `SMTP_SECURE` | `false` | `true` for port 465 (implicit TLS). |
-| `SMTP_USER` | — | SMTP mailbox username (e.g. `kevin@i-cost.co.uk`). |
-| `SMTP_PASS` | — | SMTP mailbox password. |
-| `CONTACT_TO` | `kevin@i-cost.co.uk` | Where enquiries are sent. |
-| `CONTACT_CC` | `connect@sustainzone.earth` | CC on every enquiry. |
-| `CONTACT_FROM` | `SMTP_USER` | "From" address (use a mailbox on your domain so SPF/DKIM pass). |
+
 
 Create `.env.production` (or set in the host panel):
 
 ```
 NEXT_PUBLIC_SITE_URL=https://your-domain.example
 NEXT_PUBLIC_INDEXABLE=true
-SMTP_HOST=mail.i-cost.co.uk
-SMTP_PORT=587
-SMTP_USER=kevin@i-cost.co.uk
-SMTP_PASS=your-mailbox-password
-# CONTACT_TO / CONTACT_CC default to kevin@i-cost.co.uk and connect@sustainzone.earth
 ```
 
 ### Contact form
 
-The enquiry form (`/contact` and the homepage section) POSTs to the `POST /api/contact` route, which emails the enquiry to `CONTACT_TO` and CCs `CONTACT_CC` via SMTP, with the visitor's address as reply-to and the selected objective/organisation included. Until SMTP is set, the form returns a clear "service not yet configured" message (it never silently drops a submission). A hidden honeypot field reduces spam. Create the `kevin@i-cost.co.uk` mailbox in Hestia (Mail), then put its SMTP credentials in the env above.
+The enquiry form (`/contact` and the homepage section) is static-hosting friendly: it opens the visitor's email app with a prepared message to `kevin@i-cost.co.uk` and CCs `connect@sustainzone.earth`. No server-side API route or SMTP configuration is required for static hosting.
 
-## Deploying on Hestia (Node app)
+## Deploying on Hestia as a plain static website
 
-This is a server-rendered Next.js app. On a Hestia VPS:
+This app is configured for `next export`, so Hestia can serve it from `public_html` without Node, PM2, or a reverse proxy.
 
-1. **Node.js** 18+ installed on the server (the app was developed on Node 20+).
-2. Upload / `git clone` this repository into the web domain's app directory.
-3. Install and build:
+1. Build the static website locally or on the server:
    ```bash
    npm ci
    npm run build
    ```
-4. Run it as a long-lived process (PM2 recommended):
-   ```bash
-   npm i -g pm2
-   PORT=3000 NEXT_PUBLIC_SITE_URL=https://your-domain NEXT_PUBLIC_INDEXABLE=true pm2 start "npm start" --name icost-web
-   pm2 save
+2. Upload the **contents of `out/`** into the Hestia web root, for example:
    ```
-5. In Hestia, point the domain's **proxy template** (e.g. `NodeJS` / a reverse proxy) at `http://127.0.0.1:3000`, or add an Nginx/Apache reverse-proxy rule forwarding to that port. Enable SSL (Let's Encrypt) for the domain.
+   /home/icostco/web/new.i-cost.co.uk/public_html/
+   ```
+3. In Hestia, keep the domain as a normal static website and enable SSL / Let's Encrypt. No Node proxy template is needed.
 
-All required runtime assets are committed (`public/models`, `public/draco`, `public/brand`, `public/posters`, `public/video`) — no extra downloads are needed to build and run.
+All required runtime assets are emitted into `out/` during the build.
 
 ### What to upload to Hestia
 
-Easiest: **`git clone`** this repo on the server (or in Hestia's Git deploy), then `npm ci && npm run build`. If you upload files manually instead, include everything in the repo **except** the two regenerated folders:
-
-**Upload these:**
+For a static deployment, upload only the generated files inside:
 
 ```
-src/                     app code (pages, components, API route, lib, data)
-public/                  REQUIRED assets:
-  ├─ models/             office-desktop.glb, office-mobile.glb
-  ├─ draco/              Draco decoder (draco_decoder.wasm, etc.)
-  ├─ brand/              icost-group-logo-320.png
-  ├─ posters/            hero-poster.svg
-  └─ video/              hero-bg.mp4
-package.json
-package-lock.json
-next.config.mjs
-tsconfig.json
-tailwind.config.ts
-postcss.config.mjs
-.eslintrc.json
-README.md
-.env.production          (create on the server — see env vars above; do NOT commit secrets)
+out/
 ```
 
-**Do NOT upload** (regenerated on the server):
+Do **not** upload the source folders or regenerated development folders to `public_html`:
 
 ```
-node_modules/            → created by `npm ci`
-.next/                   → created by `npm run build`
+src/
+node_modules/
+.next/
 ```
 
-Optional (documentation only, not needed to run): `phase-1/ … phase-4/`, `*_REGISTER.md`, `PROJECT_STATUS.md`, `CHANGELOG.md`, `scripts/`.
-
-> Because the contact form and server rendering need Node, this must run as a **Node application** on Hestia (Node 18+ + PM2 + reverse proxy) — a plain static/PHP web root will not run it.
-
-> The original source model `office_building.glb` (~37 MB) is **not** committed (size). It is only needed to regenerate the optimised GLBs via `npm run optimise:glb`; the optimised `public/models/*.glb` are already committed, so the app builds and runs without it.
+If building directly on the server, keep the source in a separate folder such as `/home/icostco/web/new.i-cost.co.uk/app`, then copy/sync `app/out/` into `public_html/`.
 
 ## What's in here
 
@@ -130,7 +93,7 @@ Optional (documentation only, not needed to run): `phase-1/ … phase-4/`, `*_RE
 
 ## Outstanding owner inputs (before go-live)
 
-Purpose-built IFC4 model + verified data · completed capability/claims matrix · confirmed domain · wired contact backend · final vector logos. See `DECISION_REGISTER.md` / `DEPENDENCY_REGISTER.md`.
+Purpose-built IFC4 model + verified data · completed capability/claims matrix · confirmed domain · confirmed contact email workflow · final vector logos. See `DECISION_REGISTER.md` / `DEPENDENCY_REGISTER.md`.
 
 ## Media credits / licences
 
@@ -139,6 +102,6 @@ Purpose-built IFC4 model + verified data · completed capability/claims matrix �
 
 ## Accessibility & performance notes
 
-- Important content is server-rendered semantic HTML; the 3D canvas is a progressive enhancement with poster / reduced-motion / no-WebGL / mobile fallbacks.
+- Important content is pre-rendered semantic HTML; the 3D canvas is a progressive enhancement with poster / reduced-motion / no-WebGL / mobile fallbacks.
 - The model's gentle auto-rotation and scroll/reveal animations respect `prefers-reduced-motion` (they pause when the OS "reduce motion" setting is on).
 - Production build verified; QA crawler ("ALL CHECKS PASSED"); no console errors.
