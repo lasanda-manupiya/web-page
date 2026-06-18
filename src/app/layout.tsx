@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { SITE } from '@/lib/seo/site';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.baseUrl),
   title: {
     default: 'One Model. Complete Project Intelligence. | iCost + SustainZone',
     template: '%s | iCost + SustainZone',
@@ -18,7 +20,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GB',
   },
-  robots: { index: false, follow: false }, // prototype — not for indexing yet
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

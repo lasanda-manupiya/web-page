@@ -24,7 +24,14 @@ export function pageMetadata({ title, description, path }: PageMetaInput): Metad
     },
     twitter: { card: 'summary_large_image', title, description },
     robots: SITE.indexable
-      ? { index: true, follow: true }
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+          },
+        }
       : { index: false, follow: false },
   };
 }
