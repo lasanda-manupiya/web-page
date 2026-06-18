@@ -28,7 +28,7 @@ interface Props {
   autoRotate?: boolean;
 }
 
-const AUTO_ROTATE_SPEED = 0.12; // rad/s — slow, controlled (≈ one turn per ~52s)
+const AUTO_ROTATE_SPEED = 0.16; // rad/s — slow, controlled (≈ one turn per ~39s)
 
 interface Tracked {
   mesh: THREE.Mesh;
@@ -167,10 +167,11 @@ export default function ModelViewer({ url, progressRef, freeLook, reducedMotion,
       controlsRef.current?.update?.();
       return;
     }
-    if (reducedMotion) return; // static framing — no motion under reduced-motion preference
-    // gentle continuous turntable rotation
+    // gentle continuous turntable rotation (runs even under reduced motion — slow, non-flashing,
+    // owner-requested). Scroll-scrub camera transitions still honour reduced motion elsewhere.
     if (autoRotate) autoAngle.current += delta * AUTO_ROTATE_SPEED;
-    // ease camera toward the (optionally scroll-driven, optionally auto-rotating) framing
+    // If nothing should move (no auto-rotate AND reduced motion AND no scroll progress), stay static.
+    if (!autoRotate && reducedMotion) return;
     const p = THREE.MathUtils.clamp(progressRef.current, 0, 1);
     const { pos, look } = framing(p, autoRotate ? autoAngle.current : 0);
     camera.position.lerp(pos, 1 - Math.pow(0.001, delta));

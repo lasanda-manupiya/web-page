@@ -10,7 +10,16 @@ export default function Contact({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
   const Heading = headingLevel;
 
   return (
-    <section id="contact" className="mx-auto max-w-content px-4 py-12" aria-labelledby="contact-heading">
+    <section
+      id="contact"
+      className="bg-cover bg-center bg-no-repeat"
+      aria-labelledby="contact-heading"
+      style={{
+        backgroundImage:
+          'linear-gradient(to bottom, rgba(255,255,255,0.90), rgba(246,248,247,0.95)), url(https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=55)',
+      }}
+    >
+      <div className="mx-auto max-w-content px-4 py-12">
       <Heading id="contact-heading" className="text-2xl font-bold text-ink md:text-3xl">Discuss your model</Heading>
       <p className="mt-2 max-w-2xl text-muted">
         Bring us your model and we will configure the intelligence around your project. Your selected
@@ -49,6 +58,7 @@ export default function Contact({ headingLevel = 'h2' }: { headingLevel?: 'h1' |
           Prototype form — not connected. Contact details and submission handling to be confirmed.
         </p>
       </form>
+      </div>
     </section>
   );
 }

@@ -79,6 +79,11 @@ All required runtime assets are committed (`public/models`, `public/draco`, `pub
 
 Purpose-built IFC4 model + verified data · completed capability/claims matrix · confirmed domain · wired contact backend · final vector logos. See `DECISION_REGISTER.md` / `DEPENDENCY_REGISTER.md`.
 
+## Media credits / licences
+
+- **Hero background video** — "Buildings under construction, aerial view" from [Mixkit](https://mixkit.co/free-stock-video/buildings-under-construction-aerial-view-4010/) (Mixkit Free Licence — free for commercial use, no attribution required). Self-hosted at `public/video/hero-bg.mp4`.
+- **Section background images & video poster** — [Unsplash](https://unsplash.com) (Unsplash Licence — free for commercial use, no attribution required), loaded as links from `images.unsplash.com`. To self-host instead (recommended for full control), download them into `public/images/` and swap the URLs.
+
 ## Accessibility & performance notes
 
 - Important content is server-rendered semantic HTML; the 3D canvas is a progressive enhancement with poster / reduced-motion / no-WebGL / mobile fallbacks.

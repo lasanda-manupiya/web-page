@@ -46,7 +46,14 @@ const CARDS = [
 
 export default function CapabilityCards() {
   return (
-    <section className="border-t border-line bg-white" aria-labelledby="cap-cards-h">
+    <section
+      className="border-t border-line bg-white bg-cover bg-center bg-no-repeat"
+      aria-labelledby="cap-cards-h"
+      style={{
+        backgroundImage:
+          'linear-gradient(to bottom, rgba(255,255,255,0.92), rgba(246,248,247,0.96)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55)',
+      }}
+    >
       <div className="mx-auto max-w-content px-4 py-12 md:py-14">
         <h2 id="cap-cards-h" className="sr-only">Platform capabilities</h2>
         <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

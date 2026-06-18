@@ -69,5 +69,12 @@ Scope: layout, styling, visual hierarchy only. No content, routes, functionality
 - Removed unused 1.6 MB logo original (header/footer use the 24 KB optimised version).
 - Verified: build green; custom select selection → mode/pathway correct; nav dropdowns open with links; no console errors.
 
+## 2026-06-18 — Visible rotation + background media
+
+- **Rotation fix:** the turntable was gated by `prefers-reduced-motion` (the owner's machine has it on, so it was suppressed). `ModelViewer` now runs the gentle auto-rotation regardless (slow, non-essential, muted-style decorative; scroll-scrub camera still honours reduced motion). Speed 0.12→0.16 rad/s. **Verified rotating** via successive frames showing changed orientation.
+- **Hero background video:** self-hosted `public/video/hero-bg.mp4` (Mixkit free, no attribution — construction aerial). New `HeroBackground` renders it muted/looping/inline behind the hero with a subtle light gradient (`from-white/92 via-white/85 to-white/70`) so dark text stays readable; Unsplash poster fallback.
+- **Linked background images:** subtle Unsplash backgrounds (heavy white overlay) on the Capability Cards, Evidence, and Contact sections (loaded from `images.unsplash.com`). Cards/text sit in opaque panels for readability.
+- **Media credits/licences** documented in README. Verified: build green, no overflow (desktop+mobile), video playing on both, no console errors.
+
 ## Pending
 - Owner approval of Phase 4 (Approval Gate 4 / release). Pre-launch tooling (Lighthouse/CWV, axe, screen-reader, real-device) and owner inputs (domain D-05, capability matrix D-01, contact D-04, logos D-03) remain before go-live.

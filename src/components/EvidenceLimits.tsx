@@ -2,7 +2,15 @@ import DemoBadge from './DemoBadge';
 
 export default function EvidenceLimits() {
   return (
-    <section id="evidence" className="bg-mist" aria-labelledby="evidence-heading">
+    <section
+      id="evidence"
+      className="bg-mist bg-cover bg-center bg-no-repeat"
+      aria-labelledby="evidence-heading"
+      style={{
+        backgroundImage:
+          'linear-gradient(to bottom, rgba(246,248,247,0.93), rgba(246,248,247,0.97)), url(https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1600&q=55)',
+      }}
+    >
       <div className="mx-auto max-w-content px-4 py-12">
         <div className="flex items-center gap-3">
           <h2 id="evidence-heading" className="text-2xl font-bold text-ink">

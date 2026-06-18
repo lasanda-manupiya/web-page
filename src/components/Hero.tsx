@@ -2,11 +2,13 @@ import Link from 'next/link';
 import CustomerSelector from './CustomerSelector';
 import PathwaySummary from './PathwaySummary';
 import HeroModelStage from './HeroModelStage';
+import HeroBackground from './HeroBackground';
 import Reveal from './Reveal';
 
 export default function Hero() {
   return (
-    <section className="bg-white" aria-labelledby="hero-heading">
+    <section className="relative isolate overflow-hidden bg-white" aria-labelledby="hero-heading">
+      <HeroBackground />
       <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-10 px-4 py-12 lg:grid-cols-[44fr_56fr] lg:py-16">
         {/* Left column ~44% */}
         <Reveal className="min-w-0">
